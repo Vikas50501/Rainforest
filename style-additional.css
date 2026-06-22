@@ -1,0 +1,341 @@
+/* =====================================================================
+   MISTY MOUNT — STYLE ADDITIONS
+   New components only. Paste these into your unified style.css.
+   Everything here uses var(--token, fallback) so it adopts your
+   existing palette if those variables exist, and still looks right
+   if they don't. Accent assumes your existing --olive.
+   ===================================================================== */
+
+/* generic light/alt section padding helper (used by new sections) */
+.pad{ padding:90px 0; }
+.pad.alt{ background:var(--cream,#f7f6f1); }
+
+
+/* =================== SIGHTSEEING PAGE =================== */
+
+/* ---- Sightseeing places by direction ---- */
+.dir-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:26px; margin-top:46px;
+}
+.dir-card{
+  background:#fff;
+  border:1px solid var(--line,#ece9e0);
+  border-radius:14px;
+  padding:30px 28px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  transition:transform .25s, box-shadow .25s;
+}
+.dir-card:hover{ transform:translateY(-6px); box-shadow:0 18px 38px rgba(0,0,0,.09); }
+.dir-card .tag{
+  display:inline-block; font-size:.72rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--olive); font-weight:600; margin-bottom:6px;
+}
+.dir-card h3{ font-size:1.25rem; margin-bottom:16px; }
+.dir-card ul{ list-style:none; margin:0; padding:0; }
+.dir-card li{
+  position:relative; padding:9px 0 9px 24px;
+  border-bottom:1px dashed var(--line,#ece9e0);
+  color:var(--text,#54564d); font-size:.94rem;
+}
+.dir-card li:last-child{ border-bottom:0; }
+.dir-card li::before{
+  content:""; position:absolute; left:0; top:15px;
+  width:8px; height:8px; border-radius:50%;
+  background:var(--olive-soft,#9aa884);
+}
+
+/* ---- How to reach ---- */
+.reach-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px; margin-top:46px;
+}
+.reach-card{
+  background:#fff; border:1px solid var(--line,#ece9e0);
+  border-radius:14px; padding:34px; text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+.reach-card svg{ width:40px; height:40px; fill:var(--olive); margin-bottom:12px; }
+.reach-card h3{ font-size:1.15rem; margin-bottom:14px; }
+.reach-card ul{ list-style:none; margin:0; padding:0; }
+.reach-card li{ padding:7px 0; color:var(--text,#54564d); font-size:.95rem; }
+
+/* ---- Things to do (chips) ---- */
+.todo-grid{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:46px; }
+.todo-chip{
+  background:#fff; border:1px solid var(--line,#ece9e0); border-radius:50px;
+  padding:13px 26px; font-size:.95rem; color:var(--text,#54564d);
+  font-weight:500; transition:.2s;
+}
+.todo-chip:hover{ background:var(--olive); color:#fff; border-color:var(--olive); }
+
+/* ---- About + Quick contact band ---- */
+.info-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; }
+.info-col h3{ font-size:1.5rem; margin-bottom:16px; }
+.contact-line{ display:flex; gap:12px; align-items:flex-start; padding:10px 0; color:var(--text,#54564d); font-size:.97rem; }
+.contact-line svg{ width:20px; height:20px; fill:var(--olive); flex:0 0 auto; margin-top:3px; }
+.contact-line a:hover{ color:var(--olive); }
+
+/* ---- Latest video ---- */
+.video-wrap{
+  position:relative; max-width:880px; margin:46px auto 0;
+  aspect-ratio:16/9; border-radius:16px; overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.14);
+}
+.video-wrap iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+
+/* =================== ABOUT PAGE =================== */
+
+/* ---- mirrored story block (image on the left) ---- */
+.story.flip .photo{ order:-1; }
+
+/* ---- Kerala Tourism certificate band ---- */
+.cert{ padding:80px 0; background:var(--cream,#f7f6f1); }
+.cert-inner{ display:flex; gap:46px; align-items:center; justify-content:center; flex-wrap:wrap; }
+.seal{
+  flex:0 0 auto; width:150px; height:150px; border-radius:50%;
+  background:radial-gradient(circle at 50% 40%,#8d9a5e,var(--olive));
+  color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; font-size:.66rem; font-weight:600; letter-spacing:.08em;
+  line-height:1.5; text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(36,48,24,.25);
+  border:4px solid #fff; outline:2px solid var(--olive-soft,#9aa884);
+}
+.seal .star{ font-size:1.4rem; margin-bottom:2px; color:#f3e3b0; }
+.cert .ct{ max-width:560px; }
+.cert .ct .small{ font-family:'Great Vibes',cursive; font-size:1.6rem; color:var(--olive); display:block; }
+.cert .ct h3{ font-size:1.7rem; margin:4px 0 14px; }
+.cert .ct p{ color:var(--text,#54564d); margin-bottom:14px; }
+.wlink{ display:inline-flex; align-items:center; gap:8px; color:var(--olive); font-weight:500; font-size:.92rem; }
+.wlink svg{ width:18px; height:18px; fill:var(--olive); }
+.wlink:hover{ color:var(--dark,#243018); }
+
+/* ---- Testimonials ---- */
+.tmls{ padding:90px 0; background:var(--cream,#f7f6f1); }
+.tml-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:46px; }
+.tml{
+  background:#fff; border:1px solid var(--line,#ece9e0); border-radius:14px;
+  padding:32px 30px; box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+.tml .stars{ color:#d9a93a; letter-spacing:2px; margin-bottom:12px; font-size:.95rem; }
+.tml p{ font-style:italic; color:var(--text,#54564d); }
+.tml .who{ margin-top:18px; display:flex; align-items:center; gap:12px; }
+.tml .av{ width:44px; height:44px; border-radius:50%; background-size:cover; background-position:center; flex:0 0 auto; }
+.tml .who b{ display:block; color:var(--heading,#2b321f); font-size:.95rem; }
+.tml .who span span{ color:var(--muted,#8a8c82); font-size:.82rem; }
+
+
+/* =================== RESPONSIVE (new components) =================== */
+@media(max-width:900px){
+  .story.flip .photo{ order:0; }
+  .tml-grid{ grid-template-columns:1fr; }
+}
+@media(max-width:760px){
+  .info-grid{ grid-template-columns:1fr; gap:34px; }
+  .cert .ct{ text-align:center; }
+  .pad{ padding:60px 0; }
+}
+
+
+/* =====================================================================
+   MISTY MOUNT — STYLE ADDITIONS
+   New components only. Paste these into your unified style.css.
+   Everything here uses var(--token, fallback) so it adopts your
+   existing palette if those variables exist, and still looks right
+   if they don't. Accent assumes your existing --olive.
+   ===================================================================== */
+
+/* generic light/alt section padding helper (used by new sections) */
+.pad{ padding:90px 0; }
+.pad.alt{ background:var(--cream,#f7f6f1); }
+
+
+/* =================== SIGHTSEEING PAGE =================== */
+
+/* ---- Sightseeing places by direction ---- */
+.dir-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:26px; margin-top:46px;
+}
+.dir-card{
+  background:#fff;
+  border:1px solid var(--line,#ece9e0);
+  border-radius:14px;
+  padding:30px 28px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  transition:transform .25s, box-shadow .25s;
+}
+.dir-card:hover{ transform:translateY(-6px); box-shadow:0 18px 38px rgba(0,0,0,.09); }
+.dir-card .tag{
+  display:inline-block; font-size:.72rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--olive); font-weight:600; margin-bottom:6px;
+}
+.dir-card h3{ font-size:1.25rem; margin-bottom:16px; }
+.dir-card ul{ list-style:none; margin:0; padding:0; }
+.dir-card li{
+  position:relative; padding:9px 0 9px 24px;
+  border-bottom:1px dashed var(--line,#ece9e0);
+  color:var(--text,#54564d); font-size:.94rem;
+}
+.dir-card li:last-child{ border-bottom:0; }
+.dir-card li::before{
+  content:""; position:absolute; left:0; top:15px;
+  width:8px; height:8px; border-radius:50%;
+  background:var(--olive-soft,#9aa884);
+}
+
+/* ---- How to reach ---- */
+.reach-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px; margin-top:46px;
+}
+.reach-card{
+  background:#fff; border:1px solid var(--line,#ece9e0);
+  border-radius:14px; padding:34px; text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+.reach-card svg{ width:40px; height:40px; fill:var(--olive); margin-bottom:12px; }
+.reach-card h3{ font-size:1.15rem; margin-bottom:14px; }
+.reach-card ul{ list-style:none; margin:0; padding:0; }
+.reach-card li{ padding:7px 0; color:var(--text,#54564d); font-size:.95rem; }
+
+/* ---- Things to do (chips) ---- */
+.todo-grid{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:46px; }
+.todo-chip{
+  background:#fff; border:1px solid var(--line,#ece9e0); border-radius:50px;
+  padding:13px 26px; font-size:.95rem; color:var(--text,#54564d);
+  font-weight:500; transition:.2s;
+}
+.todo-chip:hover{ background:var(--olive); color:#fff; border-color:var(--olive); }
+
+/* ---- About + Quick contact band ---- */
+.info-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; }
+.info-col h3{ font-size:1.5rem; margin-bottom:16px; }
+.contact-line{ display:flex; gap:12px; align-items:flex-start; padding:10px 0; color:var(--text,#54564d); font-size:.97rem; }
+.contact-line svg{ width:20px; height:20px; fill:var(--olive); flex:0 0 auto; margin-top:3px; }
+.contact-line a:hover{ color:var(--olive); }
+
+/* ---- Latest video ---- */
+.video-wrap{
+  position:relative; max-width:880px; margin:46px auto 0;
+  aspect-ratio:16/9; border-radius:16px; overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.14);
+}
+.video-wrap iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+
+/* =================== ABOUT PAGE =================== */
+
+/* ---- mirrored story block (image on the left) ---- */
+.story.flip .photo{ order:-1; }
+
+/* ---- Kerala Tourism certificate band ---- */
+.cert{ padding:80px 0; background:var(--cream,#f7f6f1); }
+.cert-inner{ display:flex; gap:46px; align-items:center; justify-content:center; flex-wrap:wrap; }
+.seal{
+  flex:0 0 auto; width:150px; height:150px; border-radius:50%;
+  background:radial-gradient(circle at 50% 40%,#8d9a5e,var(--olive));
+  color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; font-size:.66rem; font-weight:600; letter-spacing:.08em;
+  line-height:1.5; text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(36,48,24,.25);
+  border:4px solid #fff; outline:2px solid var(--olive-soft,#9aa884);
+}
+.seal .star{ font-size:1.4rem; margin-bottom:2px; color:#f3e3b0; }
+.cert .ct{ max-width:560px; }
+.cert .ct .small{ font-family:'Great Vibes',cursive; font-size:1.6rem; color:var(--olive); display:block; }
+.cert .ct h3{ font-size:1.7rem; margin:4px 0 14px; }
+.cert .ct p{ color:var(--text,#54564d); margin-bottom:14px; }
+.wlink{ display:inline-flex; align-items:center; gap:8px; color:var(--olive); font-weight:500; font-size:.92rem; }
+.wlink svg{ width:18px; height:18px; fill:var(--olive); }
+.wlink:hover{ color:var(--dark,#243018); }
+
+/* ---- Testimonials ---- */
+.tmls{ padding:90px 0; background:var(--cream,#f7f6f1); }
+.tml-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:46px; }
+.tml{
+  background:#fff; border:1px solid var(--line,#ece9e0); border-radius:14px;
+  padding:32px 30px; box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+.tml .stars{ color:#d9a93a; letter-spacing:2px; margin-bottom:12px; font-size:.95rem; }
+.tml p{ font-style:italic; color:var(--text,#54564d); }
+.tml .who{ margin-top:18px; display:flex; align-items:center; gap:12px; }
+.tml .av{ width:44px; height:44px; border-radius:50%; background-size:cover; background-position:center; flex:0 0 auto; }
+.tml .who b{ display:block; color:var(--heading,#2b321f); font-size:.95rem; }
+.tml .who span span{ color:var(--muted,#8a8c82); font-size:.82rem; }
+
+
+/* =================== RESPONSIVE (new components) =================== */
+@media(max-width:900px){
+  .story.flip .photo{ order:0; }
+  .tml-grid{ grid-template-columns:1fr; }
+}
+@media(max-width:760px){
+  .info-grid{ grid-template-columns:1fr; gap:34px; }
+  .cert .ct{ text-align:center; }
+  .pad{ padding:60px 0; }
+}
+
+
+/* =================== HOME PAGE =================== */
+
+/* ---- Visit our properties ---- */
+.props{ padding:90px 0; }
+.prop-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:46px; }
+.prop-card{
+  background:#fff; border:1px solid var(--line,#ece9e0); 
+  overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.06);
+  display:flex; flex-direction:column; transition:transform .25s, box-shadow .25s;
+}
+.prop-card:hover{ transform:translateY(-6px); box-shadow:0 18px 38px rgba(0,0,0,.09); }
+.prop-card .img{ height:220px; background-size:cover; background-position:center; }
+.prop-card .pc-body{ padding:26px 24px 28px; display:flex; flex-direction:column; flex:1; }
+.prop-card h3{ font-size:1.2rem; margin-bottom:10px; }
+.prop-card p{ color:var(--muted,#8a8c82); font-size:.94rem; flex:1; }
+.prop-card .pc-link{ margin-top:16px; align-self:flex-start; color:var(--olive); font-weight:600; font-size:.9rem; transition:.2s; }
+.prop-card .pc-link:hover{ color:var(--dark,#243018); }
+.props-weather{ text-align:center; margin-top:36px; }
+.props-weather .wlink{ justify-content:center; }
+
+@media(max-width:900px){ .prop-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:760px){ .prop-grid{ grid-template-columns:1fr; } }
+
+
+/* ---- MAP + location ---- */
+.map{
+    cursor:pointer;
+    text-align:center;
+    padding:40px;
+    background:#f5f5f5;
+}
+
+.map-popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+}
+
+.map-popup img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:#fff;
+    font-size:40px;
+    cursor:pointer;
+}

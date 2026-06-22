@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mount Resort — Misty Mount</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- New component styles (property cards, testimonials, video). Merge into style.css when ready, then remove this line. -->
+<link rel="stylesheet" href="style-additional.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="wrap nav-inner">
+   <div class="brand">
+    <a href="/" class="logo-link">
+        <img src="images/logo_mn.png" alt="Mount Resort Logo" class="logo">
+    </a>
+</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+   <ul class="menu" id="menu">
+  <li><a href="index.html" class="active">Home</a></li>
+  <li><a href="about.html">About Us</a></li>
+  <li><a href="sightseeing.html">Sightseeing</a></li>
+  <li><a href="facilities.html">Facilities</a></li>
+  <li><a href="accommodation.html">Accommodation</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="contact.html">Contact Us</a></li>
+</ul>
+  </div>
+</header>
+
+<!-- ============ HERO (image slideshow) ============ -->
+<section class="hero" id="hero">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('images/01.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/02.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/03.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/04.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/05.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/06.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/07.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/10.jpg')"></div>
+  </div>
+
+  <button class="hero-arrow left" id="heroPrev" aria-label="Previous">&#10094;</button>
+  <button class="hero-arrow right" id="heroNext" aria-label="Next">&#10095;</button>
+
+  <!-- <div class="hero-content">
+    <h1 id="heroTitle">A Welcome Treat in Ooty</h1>
+    <span class="sub" id="heroSub">Comes a fine Resort to serve its Name</span>
+  </div> -->
+
+  <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- ============ CALL BAR + CARDS ============ -->
+<section class="intro" id="cards">
+  
+ <div class="wrap">
+    
+
+     <div class="wrap">
+    <div class="sec-head">
+      <span class="small" style="color:var(--olive)">For Booking Call us @: +91 223 334 2234
+</span>
+      <p>The "Rainforest Munnar Resort" is ideally located in a deep-forest like environment, thickly surrounded by huge, mossy wild trees, ferns and thickets.
+</p><div class="read-more">
+<span class="read-more"><a href="#">Read more <i class="ti ti-arrow-right"></i></a></span></div>
+    </div>
+
+<div class="cards">
+      <article class="card">
+        <div class="img" style="background-image:url('images/gallery-img (5).jpeg')"></div>
+        <div class="body">
+          <h3>Swim in Nature</h3>
+          <div class="flip">
+            <p>A midsummer night's dream — a classic right? You bet it is..the stay at the Resort, offers the king-size gorgeous pool!</p>
+            <span class="price">Starts From $60.00 /Night</span>
+          </div>
+        </div>
+        <div class="actions"><a href="#">Book Now</a><a href="#">Enquire</a></div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('images/Accommodation-img (1).jpeg')"></div>
+        <div class="body">
+          <h3>Rooms of Misty Mount</h3>
+          <div class="flip">
+            <p>Misty Mount is truly a home away from home. A charming lobby welcomes you and instantly you feel at home!</p>
+            <span class="price">Starts From $60.00 /Night</span>
+          </div>
+        </div>
+        <div class="actions"><a href="#">Book Now</a><a href="#">Enquire</a></div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('images/Accommodation-img (13).jpeg')"></div>
+        <div class="body">
+          <h3>The Great Dining</h3>
+          <div class="flip">
+            <p>The dining experience at Misty Mount is gourmet's delight! Indulge in different cuisines — remember you are holidaying!</p>
+            <span class="price">Starts From $60.00 /Night</span>
+          </div>
+        </div>
+        <div class="actions"><a href="#">Book Now</a><a href="#">Enquire</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT OUR PROPERTIES ============ -->
+<section class="props">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="small" style="color:var(--olive)">Our family of stays</span>
+      <h2>Visit Our Properties</h2>
+      <p>Three distinct escapes across the Munnar hills — each with its own character, all wrapped in mist and forest.</p>
+    </div>
+
+    <div class="prop-grid">
+      <article class="prop-card">
+        <div class="img" style="background-image:url('images/Accommodation-img (11).jpeg')"></div>
+        <div class="pc-body">
+          <h3>Rainforest Munnar Resort</h3>
+          <p>Popularly known as the High Ranges, Munnar is perhaps a perfect reflection of the Garden of Eden in Kerala. Away from the mundane hustle and bustle of modern life, retire into the cozy lap of nature…</p>
+          <a class="pc-link" href="about.html">View Details &rarr;</a>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="img" style="background-image:url('images/gallery-img (7).jpeg')"></div>
+        <div class="pc-body">
+          <h3>Munnar Honeymoon Wooden Cottage</h3>
+          <p>A Honeymoon Wooden Cottage @ Rainforest Munnar Resort. Complimentary cake, karaoke music & a freshly cut flower arrangement. On request: barbecue & campfire, and a candle-light dinner…</p>
+          <a class="pc-link" href="wooden-cottage.html">View Details &rarr;</a>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="img" style="background-image:url('images/gallery-img (5).jpeg')"></div>
+        <div class="pc-body">
+          <h3>RainForest Kanthallor Orchard</h3>
+          <p>Kanthalloor is a village known as the Southern Kashmir for its chilly climate and misty atmosphere. Nestled in the Western Ghats, it sits in Kerala around 50 km west of Munnar.</p>
+          <a class="pc-link" href="kanthalloor.html">View Details &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DARK FEATURES ============ -->
+<section class="features">
+  <div class="wrap">
+    <div class="feat-grid">
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 1.7 1.3 3 3 3v10h2V12c1.7 0 3-1.3 3-3V2H9zm5-7c-1.7 0-3 2.2-3 5s1.3 4 3 4v8h2V2z"/></svg>
+        <h4>Best Food Menu</h4>
+        <p>We serve Continental, Chinese and Indian cuisines. Not to mention many regional flavors and tastes. A feast for your taste buds!</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><path d="M21 12c0-4-3-7-7-7s-7 3-7 7H3v2h9v-1a2 2 0 1 1 4 0v1h5v-2zM12 16H3v2h18v-2z"/></svg>
+        <h4>Enjoy Silence in Privacy</h4>
+        <p>The quietude of the place coupled with our discreet room service would leave you to yourself in toto. You can be as private as possible!</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        <h4>In the Best Locale</h4>
+        <p>The quintessential locales of the Misty Mount are unbelievable. You can disappear into the woods in no time, yet come back quickly.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 18H5V10h14v10zM5 8V6h14v2H5z"/></svg>
+        <h4>Easy Booking</h4>
+        <p>Reserve your stay in a few clicks. Flexible dates, instant confirmation and early-bird offers all year round await you.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><path d="M21 19v-2H3v2h18zM12 3a1.5 1.5 0 0 0-1.5 1.5c0 .3.1.6.2.8C7.5 6.1 5 9 5 12.5V16h14v-3.5c0-3.5-2.5-6.4-5.7-7.2.1-.2.2-.5.2-.8A1.5 1.5 0 0 0 12 3z"/></svg>
+        <h4>Round-the-Clock Service</h4>
+        <p>Our concierge and room service run 24/7. Whatever you need, whenever you need it, the Misty Mount team is at hand.</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24"><path d="M21 11V8a2 2 0 0 0-2-2h-5v5h-2V6H7a2 2 0 0 0-2 2v3a2 2 0 0 0-2 2v5h2v-2h14v2h2v-5a2 2 0 0 0-2-2z"/></svg>
+        <h4>Comfy Beds</h4>
+        <p>Fully furnished rooms with king-size beds and premium linen. Sink in after a day in the wilderness and sleep like never before.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AMENITIES ============ -->
+<section class="amenities">
+  <div class="text">
+    <h2>Amenities of Misty Mount</h2>
+    <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh amet. This experience will be worth in your lifetime.</p>
+    <div class="eyebrow-line"></div>
+    <div class="thumbs">
+      <span style="background-image:url('images/gallery-img (1).jpeg')"></span>
+      <span style="background-image:url('images/gallery-img (2).jpeg')"></span>
+      <span style="background-image:url('images/gallery-img (3).jpeg')"></span>
+      <span style="background-image:url('images/gallery-img (9).jpeg')"></span>
+    </div>
+  </div>
+  <div class="photo" style="background-image:url('images/gallery-img (1).jpeg')"></div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing" id="pricing">
+   <div class="sec-head">
+      <span class="small" style="color:var(--olive)">Glance at our great resort
+  </span>
+      <h2>OUR PRICING</h2>
+      <p>Three distinct escapes across the Munnar hills — each with its own character, all wrapped in mist and forest.</p>
+    </div>
+
+  <div class="wrap">
+    <div class="price-grid">
+      <article class="plan">
+        <div class="img" style="background-image:url('images/Accommodation-img (1).jpeg')"></div>
+        <div class="pbody">
+          <h3>Classic</h3>
+          <ul>
+            <li>2 beds in room</li><li>4 people in room</li><li>1200 sqf</li><li>Split AC</li>
+          </ul>
+          <p class="from">Starts From <b>$60.00 / Night</b></p>
+        </div>
+        <a class="pbtn" href="#">Book Now</a>
+      </article>
+      <article class="plan">
+        <div class="img" style="background-image:url('images/Accommodation-img (8).jpeg')"></div>
+        <div class="pbody">
+          <h3>Modern</h3>
+          <ul>
+            <li>2 beds in room</li><li>4 people in room</li><li>1200 sqf</li><li>Split AC</li>
+          </ul>
+          <p class="from">Starts From <b>$60.00 / Night</b></p>
+        </div>
+        <a class="pbtn" href="#">Book Now</a>
+      </article>
+      <article class="plan">
+        <div class="img" style="background-image:url('images/gallery-img (9).jpeg')"></div>
+        <div class="pbody">
+          <h3>Retro</h3>
+          <ul>
+            <li>2 beds in room</li><li>4 people in room</li><li>1200 sqf</li><li>Split AC</li>
+          </ul>
+          <p class="from">Starts From <b>$60.00 / Night</b></p>
+        </div>
+        <a class="pbtn" href="#">Book Now</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK NOW + DEALS ============ -->
+<section class="book-deals">
+  <div class="book">
+    <div class="banner"><span class="script">Serenity &amp; brittle nature</span></div>
+    <div class="mm-book">
+  <h2 class="mm-heading">BOOK NOW</h2>
+
+  <div class="mm-card">
+    <div class="mm-body">
+      <form id="mmForm" novalidate>
+
+        <!-- ===== STEP 1: STAY ===== -->
+        <div class="mm-panel is-active" data-panel="0">
+          <div class="mm-grid">
+
+            <div class="mm-field" data-required data-rule="date">
+              <label class="mm-label" for="mm-checkin">Check in<span class="req">*</span></label>
+              <div class="mm-date-wrap" id="mm-date-wrap">
+                <svg class="mm-cal" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+                </svg>
+                <input class="mm-input" type="date" id="mm-checkin" name="checkin">
+                <button type="button" class="mm-date-clear" id="mm-date-clear" aria-label="Clear date">&times;</button>
+              </div>
+              <span class="mm-err">* This field is required</span>
+            </div>
+
+            <div class="mm-field">
+              <label class="mm-label" for="mm-nights">Number Of Nights<span class="req">*</span></label>
+              <select class="mm-select" id="mm-nights" name="nights">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+
+            <div class="mm-field">
+              <label class="mm-label" for="mm-guests">Number of Guests<span class="req">*</span></label>
+              <div class="mm-slider-row">
+                <div class="mm-slider-box" id="mm-guests-val">2</div>
+                <input class="mm-range" type="range" id="mm-guests" name="guests" min="1" max="20" step="1" value="2">
+              </div>
+            </div>
+
+            <div class="mm-field">
+              <label class="mm-label" for="mm-rooms">Number of Rooms<span class="req">*</span></label>
+              <div class="mm-slider-row">
+                <div class="mm-slider-box" id="mm-rooms-val">1</div>
+                <input class="mm-range" type="range" id="mm-rooms" name="rooms" min="1" max="10" step="1" value="1">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== STEP 2: DETAILS ===== -->
+        <div class="mm-panel" data-panel="1">
+
+          <div class="mm-field mm-field--full" data-required data-rule="name">
+            <label class="mm-label" for="mm-name">Name<span class="req">*</span></label>
+            <input class="mm-input" type="text" id="mm-name" name="name" placeholder="Name" autocomplete="name">
+            <span class="mm-err">* This field is required; Valid name only, no special characters except dots and single quote for salutation</span>
+          </div>
+
+          <div class="mm-field mm-field--full" data-required data-rule="email">
+            <label class="mm-label" for="mm-email">Email Address<span class="req">*</span></label>
+            <input class="mm-input" type="email" id="mm-email" name="email" placeholder="Email Address" autocomplete="email">
+            <span class="mm-err">* This field is required; * Invalid email address</span>
+          </div>
+
+          <div class="mm-field mm-field--full" data-required data-rule="phone">
+            <label class="mm-label" for="mm-phone">Phone<span class="req">*</span></label>
+            <input class="mm-input" type="tel" id="mm-phone" name="phone" placeholder="Phone" autocomplete="tel">
+            <span class="mm-err">* This field is required; * Invalid phone number</span>
+          </div>
+
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="mm-footer">
+          <button type="button"   class="mm-btn" id="mmPrev">Prev</button>
+          <button type="submit"    class="mm-btn is-cta" id="mmSubmit">Submit</button>
+          <button type="button"    class="mm-btn is-cta" id="mmNext">Next</button>
+        </div>
+
+      </form>
+
+      <!-- ===== SUCCESS ===== -->
+      <div class="mm-success" id="mmSuccess">
+        <div class="mm-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h3>Request received</h3>
+        <p id="mmSuccessMsg">Thank you. We'll confirm your stay by email shortly.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="deals">
+    <h2>Get the Best Deals</h2>
+    <p>Get irresistible offers from Misty Mount Resorts. We have special packages for winter and also an off season package. Reserve now to avail the early bird offers!</p>
+    <div class="div"></div>
+    <p>This experience will be worth in your lifetime.</p>
+    <div class="div"></div>
+    <p>Get away from the hustle and bustle of the city &amp; venture into wilderness safely from Misty Mount.</p>
+    <div class="call"><span class="script">Have Questions? Call (457) 213-9438</span></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="tmls">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="small">In their words</span>
+      <h2>Testimonials</h2>
+      <p>What guests remember long after they've left the hills behind.</p>
+    </div>
+    <div class="tml-grid">
+      <div class="tml">
+        <div class="stars">★★★★★</div>
+        <p>"The wooden cottage was magical — cake, flowers and a campfire under the stars. The perfect honeymoon escape."</p>
+        <div class="who">
+          <span class="av" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop')"></span>
+          <span><b>Sneha & Arun</b><span>Hyderabad</span></span>
+        </div>
+      </div>
+      <div class="tml">
+        <div class="stars">★★★★★</div>
+        <p>"Surrounded by mist and green all day. The pool, the food, the silence — a true home away from home."</p>
+        <div class="who">
+          <span class="av" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop')"></span>
+          <span><b>Rohit M.</b><span>Pune</span></span>
+        </div>
+      </div>
+      <div class="tml">
+        <div class="stars">★★★★★</div>
+        <p>"We drove out to the Kanthalloor orchard property — Southern Kashmir indeed. Unforgettable views and warm hosts."</p>
+        <div class="who">
+          <span class="av" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop')"></span>
+          <span><b>Lakshmi V.</b><span>Coimbatore</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="small" style="color:var(--olive)">Glance at our great resort
+</span>
+      <h2>OUR GALLERY
+</h2>
+      <p>Explore the charm, comfort, and natural beauty of Rainforest Resort.
+</p></div>
+  <div class="wrap" style="padding-top:70px">
+    <div class="gal-grid">
+      <div class="tall" style="background-image:url('images/Accommodation-img (4).jpeg')"></div>
+      <div class="col">
+        <span style="background-image:url('images/Accommodation-img (11).jpeg')"></span>
+        <span style="background-image:url('images/Accommodation-img (7).jpeg')"></span>
+      </div>
+    </div>
+    <div class="center"><a href="gallery.html" class="view-more">View More Details</a></div>
+  </div>
+</section>
+
+<!-- ============ LATEST VIDEO ============ -->
+<section class="pad alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="small" style="color:var(--olive)">Watch</span>
+      <h2>Latest Video</h2>
+      <p>A glimpse of life at Rainforest Munnar before you arrive.</p>
+    </div>
+   <div class="video-wrap">
+    <iframe src="https://www.youtube-nocookie.com/embed/gQVWs0qyV6I?si=t3Crto9cpf5kQ5Uc"
+            title="Rainforest Munnar — Latest Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+</div>
+  </div>
+</section>
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Misty Mount</h4>
+        <div class="addr">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#9aa884"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <span>44 Shirley Ave.<br>West Chicago, IL 60185</span>
+        </div>
+        <hr>
+        <div class="phone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#9aa884"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          +91 223 334 2234
+        </div>
+        <a class="fbtn" href="#">Book a Room Now</a>
+      </div>
+
+      <div>
+        <h4>&nbsp;</h4>
+        <div class="ig-grid">
+          <span style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1582610116397-edb318620f90?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=300&auto=format&fit=crop')"></span>
+        </div>
+      </div>
+
+      <div>
+        <h4>&nbsp;</h4>
+        <ul class="flinks">
+          <li><a href="about.html">About Misty Mount</a></li>
+          <li><a href="#">Room Service</a></li>
+          <li><a href="#">Help Desk</a></li>
+          <li><a href="#">Reservations</a></li>
+          <li><a href="#">Book a Room Now</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.8-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg></a>
+          <a href="#" aria-label="Dribbble"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.6 4.6a8.3 8.3 0 0 1 1.9 5.2c-.3-.1-3-.6-5.7-.3-.1-.3-.2-.5-.4-.9 3-1.2 4.2-2.9 4.2-4zM12 3.5a8.4 8.4 0 0 1 5.4 2c-.1.1-1.2 1.7-4 2.8A36 36 0 0 0 9.8 3.8 8.5 8.5 0 0 1 12 3.5zM8 4.4a42 42 0 0 1 3.6 4.4A26 26 0 0 1 3.7 10a8.5 8.5 0 0 1 4.3-5.6zM3.5 12v-.3a28 28 0 0 0 8.6-1.2c.2.4.4.8.5 1.2-3.3 1-5.6 3.5-6.6 4.9A8.4 8.4 0 0 1 3.5 12zm4 6.4c.7-1.2 2.6-3.6 6-4.7a35 35 0 0 1 1.8 6.4 8.4 8.4 0 0 1-7.8-1.7zm9.4.7a38 38 0 0 0-1.7-6c2.5-.4 4.7.3 5 .4a8.4 8.4 0 0 1-3.3 5.6z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6A22 22 0 0 0 14.4 3.5c-2.5 0-4.1 1.5-4.1 4.2v2.2H7.5V13h2.8v8z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Winners</h4>
+        <p class="winners-txt">The wise traveler travels only in his imagination. In Misty Mount Resorts, many wise travelers repeatedly come to stay.</p>
+        <div class="badges">
+          <div class="badge b1">★<br>STAR<br>TRAVEL</div>
+          <div class="badge b2">WORLD<br>TOUR</div>
+          <div class="badge b3">BEST<br>TOUR</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">Copyright 2026 Misty Mount. All rights reserved.</div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top">&#8593;</button>
+
+<script>
+// sticky header
+const header=document.getElementById('header');
+const totop=document.getElementById('totop');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  header.classList.toggle('scrolled',y>60);
+  totop.classList.toggle('show',y>500);
+});
+// mobile menu
+document.getElementById('navToggle').addEventListener('click',()=>{
+  document.getElementById('menu').classList.toggle('open');
+});
+// range sliders
+const guests=document.getElementById('guests'),gVal=document.getElementById('gVal');
+const rooms=document.getElementById('rooms'),rVal=document.getElementById('rVal');
+guests.addEventListener('input',()=>gVal.textContent=guests.value);
+rooms.addEventListener('input',()=>rVal.textContent=rooms.value);
+// back to top
+totop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* =========================================================
+   HERO SLIDESHOW
+   ========================================================= */
+(function(){
+  const slidesWrap = document.getElementById('heroSlides');
+  const slides = Array.from(slidesWrap.querySelectorAll('.hero-slide'));
+  const dotsWrap = document.getElementById('heroDots');
+  const captions = [
+    {title:'A Welcome Treat in Munnar', sub:'Comes a fine Resort to serve its Name'},
+    {title:'Wake Up to the Mountains', sub:'Where every sunrise feels like a postcard'},
+    {title:'Dine Under the Stars', sub:'Gourmet evenings, framed by the valley'},
+    {title:'Unwind by the Water', sub:'Let the quiet of the hills slow you down'}
+  ];
+  const heroTitle = document.getElementById('heroTitle'); // may be null (hero-content is commented out)
+  const heroSub = document.getElementById('heroSub');
+  let current = 0;
+  let timer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function render(){
+    slides.forEach((s,i)=>s.classList.toggle('active', i===current));
+    dots.forEach((d,i)=>d.classList.toggle('active', i===current));
+
+    // captions only run if the hero-content block is enabled
+    if (heroTitle && heroSub){
+      heroTitle.style.animation = 'none';
+      heroSub.style.animation = 'none';
+      requestAnimationFrame(()=>{
+        heroTitle.style.animation = '';
+        heroSub.style.animation = '';
+      });
+      const cap = captions[current % captions.length];
+      heroTitle.textContent = cap.title;
+      heroSub.textContent = cap.sub;
+    }
+  }
+
+  function goTo(i){
+    current = (i + slides.length) % slides.length;
+    render();
+    restart();
+  }
+  function next(){ goTo(current+1); }
+  function prev(){ goTo(current-1); }
+  function restart(){
+    clearInterval(timer);
+    timer = setInterval(next, 5500);
+  }
+
+  document.getElementById('heroNext').addEventListener('click', next);
+  document.getElementById('heroPrev').addEventListener('click', prev);
+
+  restart();
+})();
+
+
+function openMap() {
+    document.getElementById('mapPopup').style.display = 'flex';
+}
+
+function closeMap() {
+    document.getElementById('mapPopup').style.display = 'none';
+}
+</script>
+<script src="form-booking-form.js"></script>
+</body>
+</html>

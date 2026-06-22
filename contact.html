@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Misty Mount</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <a href="/" class="logo-link">
+        <img src="images/logo_mn.png" alt="Mount Resort Logo" class="logo">
+      </a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="sightseeing.html">Sightseeing</a></li>
+      <li><a href="facilities.html">Facilities</a></li>
+      <li><a href="accommodation.html">Accommodation</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact Us</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============ PAGE BANNER ============ -->
+<section class="page-banner" style="background-image:url('images/contact-banner.png')">
+  <div class="pb-inner">
+    <h1>Contact Us</h1>
+    <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; <span>Contact Us</span></div>
+  </div>
+</section>
+
+<!-- ============ INFO CARDS ============ -->
+<section class="info">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="small">Get in touch</span>
+      <h2>We'd Love to Hear From You</h2>
+      <p>Questions about a booking, a special package or directions to the resort? Reach us any way you like — we're always happy to help.</p>
+    </div>
+    <div class="info-grid">
+
+      <div class="info-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+        <h3>Address</h3>
+        <p>44 Shirley Ave.<br>West Chicago, IL 60185</p>
+      </div>
+
+      <div class="info-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></div>
+        <h3>Phone</h3>
+        <p><a href="tel:+912233342234">+91 223 334 2234</a><br><a href="tel:+914572139438">(457) 213-9438</a></p>
+      </div>
+
+      <div class="info-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <h3>Email</h3>
+        <p><a href="mailto:stay@mistymount.com">stay@mistymount.com</a><br><a href="mailto:info@mistymount.com">info@mistymount.com</a></p>
+      </div>
+
+      <div class="info-card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7z"/></svg></div>
+        <h3>Reception Hours</h3>
+        <p>Open 24 / 7<br>Check-in from 1:00 PM</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT FORM + PANEL ============ -->
+<section class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- form -->
+      <div class="form-area">
+        <h2>Send Us a Message</h2>
+        <p class="lead">Fill in the form below and our team will get back to you within 24 hours.</p>
+        <form class="form-box" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cf-name">Full Name <b>*</b></label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email <b>*</b></label>
+            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="cf-phone">Phone</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="+91 ...">
+          </div>
+          <div class="field">
+            <label for="cf-subject">Subject</label>
+            <select id="cf-subject" name="subject">
+              <option>General Enquiry</option>
+              <option>Room Booking</option>
+              <option>Special Package</option>
+              <option>Feedback</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="cf-message">Message <b>*</b></label>
+            <textarea id="cf-message" name="message" placeholder="How can we help you?" required></textarea>
+          </div>
+          <div class="form-foot">
+            <button class="btn" type="submit">Send Message</button>
+            <span class="form-msg" id="formMsg"></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- side panel -->
+      <div class="cpanel">
+        <h3>Reach Us Directly</h3>
+        <p class="sub">Prefer a quick chat? Here's how to find us.</p>
+
+        <div class="row">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <div><b>Visit</b><span>44 Shirley Ave., West Chicago, IL 60185</span></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          <div><b>Call</b><span>+91 223 334 2234</span></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <div><b>Email</b><span>stay@mistymount.com</span></div>
+        </div>
+
+        <div class="call"><span class="script">Have Questions? Call (457) 213-9438</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAP ============ -->
+<!-- To use a real map: add class "has-embed" to .map and drop your Google Maps embed URL into the iframe src -->
+<section class="map" id="map">
+  <iframe src="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Misty Mount location"></iframe>
+  <div class="pin">Misty Mount</div>
+  <span>Google Map embed goes here</span>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <h2>Ready to Plan Your Escape?</h2>
+  <p>Skip the back-and-forth and reserve your room directly. Book now to avail our early-bird offers!</p>
+  <a class="btn" href="accommodation.html">Book a Room Now</a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Misty Mount</h4>
+        <div class="addr">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#9aa884"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <span>44 Shirley Ave.<br>West Chicago, IL 60185</span>
+        </div>
+        <hr>
+        <div class="phone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#9aa884"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          +91 223 334 2234
+        </div>
+        <a class="fbtn" href="accommodation.html">Book a Room Now</a>
+      </div>
+
+      <div>
+        <h4>&nbsp;</h4>
+        <div class="ig-grid">
+          <span style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1582610116397-edb318620f90?q=80&w=300&auto=format&fit=crop')"></span>
+          <span style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=300&auto=format&fit=crop')"></span>
+        </div>
+      </div>
+
+      <div>
+        <h4>&nbsp;</h4>
+        <ul class="flinks">
+          <li><a href="about.html">About Misty Mount</a></li>
+          <li><a href="#">Room Service</a></li>
+          <li><a href="#">Help Desk</a></li>
+          <li><a href="#">Reservations</a></li>
+          <li><a href="accommodation.html">Book a Room Now</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.8-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg></a>
+          <a href="#" aria-label="Dribbble"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.6 4.6a8.3 8.3 0 0 1 1.9 5.2c-.3-.1-3-.6-5.7-.3-.1-.3-.2-.5-.4-.9 3-1.2 4.2-2.9 4.2-4zM12 3.5a8.4 8.4 0 0 1 5.4 2c-.1.1-1.2 1.7-4 2.8A36 36 0 0 0 9.8 3.8 8.5 8.5 0 0 1 12 3.5zM8 4.4a42 42 0 0 1 3.6 4.4A26 26 0 0 1 3.7 10a8.5 8.5 0 0 1 4.3-5.6zM3.5 12v-.3a28 28 0 0 0 8.6-1.2c.2.4.4.8.5 1.2-3.3 1-5.6 3.5-6.6 4.9A8.4 8.4 0 0 1 3.5 12zm4 6.4c.7-1.2 2.6-3.6 6-4.7a35 35 0 0 1 1.8 6.4 8.4 8.4 0 0 1-7.8-1.7zm9.4.7a38 38 0 0 0-1.7-6c2.5-.4 4.7.3 5 .4a8.4 8.4 0 0 1-3.3 5.6z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6A22 22 0 0 0 14.4 3.5c-2.5 0-4.1 1.5-4.1 4.2v2.2H7.5V13h2.8v8z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Winners</h4>
+        <p class="winners-txt">The wise traveler travels only in his imagination. In Misty Mount Resorts, many wise travelers repeatedly come to stay.</p>
+        <div class="badges">
+          <div class="badge b1">★<br>STAR<br>TRAVEL</div>
+          <div class="badge b2">WORLD<br>TOUR</div>
+          <div class="badge b3">BEST<br>TOUR</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">Copyright 2026 Misty Mount. All rights reserved.</div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top">&#8593;</button>
+
+<script>
+// sticky header + back to top
+const header=document.getElementById('header');
+const totop=document.getElementById('totop');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  header.classList.toggle('scrolled',y>60);
+  totop.classList.toggle('show',y>500);
+});
+document.getElementById('navToggle').addEventListener('click',()=>{
+  document.getElementById('menu').classList.toggle('open');
+});
+totop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// contact form (front-end validation + thank-you message)
+const form=document.getElementById('contactForm');
+const msg=document.getElementById('formMsg');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=form.name.value.trim();
+  const email=form.email.value.trim();
+  const message=form.message.value.trim();
+  const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if(!name || !emailOk || !message){
+    msg.style.color='#c0392b';
+    msg.textContent='Please fill in your name, a valid email and a message.';
+    return;
+  }
+  msg.style.color='var(--olive)';
+  msg.textContent='Thank you, '+name+'! We\'ll be in touch shortly.';
+  form.reset();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<section class="intro" id="cards">
+  <div class="wrap">
+
+    <div class="call-bar">
+      <i class="ti ti-phone-call"></i>
+      <span>For Booking Call us @: <a href="tel:+912233342234">+91 223 334 2234</a></span>
+    </div>
+
+    <div class="intro-text">
+      <h2>Welcome to Rainforest Munnar Resort</h2>
+      <p>The <strong>"Rainforest Munnar Resort"</strong> is ideally located in a deep-forest like environment, thickly surrounded by huge, mossy wild trees, ferns and thickets.</p>
+      <a href="#" class="read-more">Read more <i class="ti ti-arrow-right"></i></a>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="img" style="background-image:url('images/gallery-img (5).jpeg')"></div>
+        <div class="body">
+          <h3>Swim in Nature</h3>
+          <div class="flip">
+            <p>A midsummer night's dream — a classic right? You bet it is..the stay at the Resort, offers the king-size gorgeous pool!</p>
+            <span class="price">Starts From $60.00 /Night</span>
+          </div>
+        </div>
+        <div class="actions"><a href="#">Book Now</a><a href="#">Enquire</a></div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('images/Accommodation-img (1).jpeg')"></div>
+        <div class="body">
+          <h3>Rooms of Misty Mount</h3>
+          <div class="flip">
+            <p>Misty Mount is truly a home away from home. A charming lobby welcomes you and instantly you feel at home!</p>
+            <span class="price">Starts From $60.00 /Night</span>
+          </div>
+        </div>
+        <div class="actions"><a href="#">Book Now</a><a href="#">Enquire</a></div>
+      </article>
+
+      <article class="card">
+        <div class="img" style="background-image:url('images/Accommodation-img (13).jpeg')"></div>
+        <div class="body">
+          <h3>The Great Dining</h3>
+          <div class="flip">
+            <p>The dining experience at Misty Mount is gourmet's delight! Indulge in different cuisines — remember you are holidaying!</p>
+            <span class="price">Starts From $60.00 /Night</span>
+          </div>
+        </div>
+        <div class="actions"><a href="#">Book Now</a><a href="#">Enquire</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+<style>
+    /* Call bar */
+.call-bar {
+  background: #1d9e75;
+  color: #fff;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.call-bar a {
+  color: #fff;
+  text-decoration: underline;
+}
+.call-bar i { font-size: 20px; }
+
+/* Intro text */
+.intro-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+.intro-text h2 {
+  font-size: 28px;
+  margin-bottom: 14px;
+  color: #1a1a1a;
+}
+.intro-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+.intro-text .read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: #1d9e75;
+  font-weight: 600;
+  text-decoration: none;
+}
+.intro-text .read-more:hover { text-decoration: underline; }
+
+/* Cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+.card .img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  transition: transform .5s ease;
+}
+.card:hover .img {
+  transform: scale(1.08);
+}
+
+.card .body {
+  padding: 20px;
+}
+.card h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.card .flip p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.card .price {
+  display: inline-block;
+  font-weight: 600;
+  color: #1d9e75;
+}
+
+.card .actions {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+.card .actions a {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: background .25s ease, color .25s ease;
+}
+.card .actions a:first-child {
+  border-right: 1px solid #eee;
+}
+.card:hover .actions a:first-child {
+  background: #1d9e75;
+  color: #fff;
+}
+.card:hover .actions a:last-child {
+  background: #1a1a1a;
+  color: #fff;
+}
+</style>
