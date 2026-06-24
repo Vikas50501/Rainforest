@@ -2081,3 +2081,128 @@ a{text-decoration:none;color:inherit}
     margin-left: auto;
     margin-right: auto;
   }
+
+/* =========================================================
+   PREMIUM BOOK & DEALS  (overlapping offer card — homepage)
+   ========================================================= */
+.bd {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 64px;
+}
+
+/* ---- banner ---- */
+.bd-banner {
+  position: relative;
+  height: clamp(320px, 38vw, 520px);
+  background: url('images/fogg-nature-img.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.bd-banner::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(18,28,16,0) 38%, rgba(18,28,16,.55) 100%);
+}
+.bd-banner .script {
+  position: relative; z-index: 2;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.1;
+  padding: 0 0 44px clamp(28px, 6vw, 72px);
+  text-shadow: 0 2px 16px rgba(0,0,0,.45);
+}
+
+/* ---- body ---- */
+.bd-body {
+  display: block;
+  padding: 0 clamp(20px, 5vw, 64px);
+}
+
+/* ---- booking form column ---- */
+.bd-book { padding-top: clamp(36px, 5vw, 56px); }
+.bd-book .mm-book { max-width: 100%; margin: 0; padding: 0; }
+
+/* ---- offer card (bedroom photo + deals) ---- */
+.bd-offer {
+  margin: 38px auto 0;
+  max-width: 440px;
+  background: var(--sage);
+  box-shadow: 0 26px 54px rgba(0,0,0,.26);
+}
+.bd-offer-img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 26vw, 300px);
+  object-fit: cover;
+}
+.bd-offer-deals {
+  padding: 38px 36px 32px;
+  text-align: center;
+  color: #fff;
+}
+.bd-offer-deals h2 {
+  font-weight: 700;
+  font-size: clamp(21px, 2.2vw, 27px);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+.bd-offer-deals p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #f1f3ee;
+  margin: 0;
+}
+.bd-div {
+  display: block;
+  width: 64%; height: 1px;
+  background: rgba(255,255,255,.45);
+  margin: 22px auto; position: relative;
+}
+.bd-div::before, .bd-div::after {
+  content: ''; position: absolute; top: -3px;
+  width: 7px; height: 7px;
+  border-top: 1px solid rgba(255,255,255,.7);
+  border-right: 1px solid rgba(255,255,255,.7);
+}
+.bd-div::before { left: 0; transform: rotate(-135deg); }
+.bd-div::after  { right: 0; transform: rotate(45deg); }
+.bd-call {
+  margin-top: 26px;
+  background: var(--charcoal);
+  padding: 22px 16px;
+}
+.bd-call .script {
+  color: #fff;
+  font-size: clamp(21px, 2.1vw, 27px);
+  line-height: 1.2;
+}
+
+/* ---- large tablet / small laptop: form left, offer right (no overlap) ---- */
+@media (min-width: 992px) and (max-width: 1079.98px) {
+  .bd-body {
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 390px);
+    gap: 44px;
+    align-items: start;
+  }
+  .bd-offer { margin: -80px 0 0; }
+}
+
+/* ---- desktop: offer floats over banner, form sits left ---- */
+@media (min-width: 1080px) {
+  .bd { padding-bottom: 90px; }
+  .bd-body { display: block; position: relative; min-height: 470px; }
+  .bd-book { max-width: 56%; padding-top: 56px; }
+  .bd-offer {
+    position: absolute; z-index: 5;
+    top: clamp(-220px, -17vw, -150px);
+    right: 0;
+    width: clamp(360px, 32vw, 430px);
+    margin: 0;
+  }
+}
