@@ -51,7 +51,7 @@
 
   /* ---- step control: button enable/disable like eForm ---- */
   var stepsEl = root.querySelector('#mmSteps');
-  function setStep(i) {
+  function setStep(i, doScroll) {
     current = i;
     panels.forEach(function (p, idx) { p.classList.toggle('is-active', idx === i); });
     prevBtn.disabled = (i === 0);
@@ -64,7 +64,7 @@
         s.classList.toggle('is-done', idx < i);
       });
     }
-    root.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (doScroll) root.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   /* ---- validation ---- */
@@ -98,12 +98,12 @@
     .forEach(function (el) { el.addEventListener('input', function () { clearErr(el); }); });
 
   /* ---- nav ---- */
-  nextBtn.addEventListener('click', function () { if (validatePanel(0)) setStep(1); });
-  prevBtn.addEventListener('click', function () { setStep(0); });
+  nextBtn.addEventListener('click', function () { if (validatePanel(0)) setStep(1, true); });
+  prevBtn.addEventListener('click', function () { setStep(0, true); });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (current !== last) { if (validatePanel(0)) setStep(1); return; }
+    if (current !== last) { if (validatePanel(0)) setStep(1, true); return; }
     if (!validatePanel(1)) return;
 
     var data = {
