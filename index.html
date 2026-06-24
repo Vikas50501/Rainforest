@@ -648,9 +648,27 @@
   <button class="totop" id="totop" aria-label="Back to top">&#8593;</button>
 
   <script>
-    // always start at the top on (re)load — don't restore previous scroll
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
+    // On reload, glide smoothly back to the top instead of a hard jump.
+    (function () {
+      // keep the browser's restored position so we have something to animate from
+      if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function glideTop() {
+        var start = window.scrollY;
+        if (start <= 80) return;                 // already at/near the top
+        if (reduce) { window.scrollTo(0, 0); return; }
+        var duration = 750, t0 = null;
+        var ease = function (t) { return 1 - Math.pow(1 - t, 3); }; // easeOutCubic
+        function frame(ts) {
+          if (t0 === null) t0 = ts;
+          var p = Math.min((ts - t0) / duration, 1);
+          window.scrollTo(0, Math.round(start * (1 - ease(p))));
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+      window.addEventListener('load', function () { requestAnimationFrame(glideTop); });
+    })();
 
     // sticky header
     const header = document.getElementById('header');
