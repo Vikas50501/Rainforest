@@ -182,8 +182,8 @@ a{text-decoration:none;color:inherit}
   text-align:center;
   padding:clamp(72px,9vw,120px) 24px;
   background:
-    linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.78)),
-    url('images/fogg-nature-img.jpeg') center/cover no-repeat;
+    linear-gradient(180deg,rgba(255,255,255,.8),rgba(255,255,255,.72)),
+    url('images/banner images.png') center/cover no-repeat;
 }
 .heritage .wrap{max-width:820px;margin:0 auto;padding:0}
 .heritage .script{
