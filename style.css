@@ -2262,7 +2262,7 @@ a{text-decoration:none;color:inherit}
 }
 .bd-call .script {
   color: #fff;
-  font-size: clamp(21px, 2.1vw, 27px);
+  font-size: clamp(17px, 1.7vw, 21px);
   line-height: 1.2;
 }
 
