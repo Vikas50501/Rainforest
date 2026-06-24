@@ -12,13 +12,29 @@
   var last    = panels.length - 1;
 
   /* ---- date: min today, custom clear, valid styling ---- */
-  var dateWrap = root.querySelector('#mm-date-wrap');
-  var checkin  = root.querySelector('#mm-checkin');
-  var dateClear= root.querySelector('#mm-date-clear');
-  checkin.min  = new Date().toISOString().split('T')[0];
+  var dateWrap   = root.querySelector('#mm-date-wrap');
+  var checkin    = root.querySelector('#mm-checkin');
+  var dateClear  = root.querySelector('#mm-date-clear');
+  var checkout   = root.querySelector('#mm-checkout');
+  var checkoutWrap = root.querySelector('.mm-date-checkout');
+  var nightsSel  = root.querySelector('#mm-nights');
+  checkin.min    = new Date().toISOString().split('T')[0];
+
   function paintDate() { dateWrap.classList.toggle('is-filled', !!checkin.value); }
-  checkin.addEventListener('change', function () { paintDate(); clearErr(checkin); });
-  dateClear.addEventListener('click', function () { checkin.value = ''; paintDate(); });
+  function computeCheckout() {
+    if (checkin.value && nightsSel) {
+      var d = new Date(checkin.value + 'T00:00:00');
+      d.setDate(d.getDate() + parseInt(nightsSel.value, 10));
+      checkout.value = d.toISOString().split('T')[0];
+      checkoutWrap.classList.add('is-filled');
+    } else {
+      checkout.value = '';
+      checkoutWrap.classList.remove('is-filled');
+    }
+  }
+  checkin.addEventListener('change', function () { paintDate(); clearErr(checkin); computeCheckout(); });
+  dateClear.addEventListener('click', function () { checkin.value = ''; paintDate(); computeCheckout(); });
+  nightsSel.addEventListener('change', computeCheckout);
 
   /* ---- sliders ---- */
   function bindSlider(id, valId) {
@@ -34,13 +50,20 @@
   bindSlider('#mm-rooms',  '#mm-rooms-val');
 
   /* ---- step control: button enable/disable like eForm ---- */
+  var stepsEl = root.querySelector('#mmSteps');
   function setStep(i) {
     current = i;
     panels.forEach(function (p, idx) { p.classList.toggle('is-active', idx === i); });
-    // first step: only Next active. last step: only Prev + Submit active.
     prevBtn.disabled = (i === 0);
     nextBtn.disabled = (i === last);
     subBtn.disabled  = (i !== last);
+    if (stepsEl) {
+      stepsEl.className = 'mm-steps step-' + i;
+      stepsEl.querySelectorAll('.mm-step').forEach(function (s, idx) {
+        s.classList.toggle('is-active', idx === i);
+        s.classList.toggle('is-done', idx < i);
+      });
+    }
     root.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
@@ -84,8 +107,9 @@
     if (!validatePanel(1)) return;
 
     var data = {
-      checkin: form.checkin.value,
-      nights:  form.nights.value,
+      checkin:  form.checkin.value,
+      checkout: form.checkout.value,
+      nights:   form.nights.value,
       guests:  form.guests.value,
       rooms:   form.rooms.value,
       name:    form.name.value.trim(),

@@ -308,6 +308,19 @@
       <div class="banner"><span class="script">Serenity &amp; brittle nature</span></div>
       <div class="mm-book">
         <h2 class="mm-heading">BOOK NOW</h2>
+        <span class="mm-heading-bar"></span>
+
+        <div class="mm-steps" id="mmSteps">
+          <div class="mm-step is-active">
+            <div class="mm-step-dot">1</div>
+            <span class="mm-step-label">Stay</span>
+          </div>
+          <div class="mm-step-line"></div>
+          <div class="mm-step">
+            <div class="mm-step-dot">2</div>
+            <span class="mm-step-label">Contact</span>
+          </div>
+        </div>
 
         <div class="mm-card">
           <div class="mm-body">
@@ -332,6 +345,18 @@
                   </div>
 
                   <div class="mm-field">
+                    <label class="mm-label" for="mm-checkout">Check out</label>
+                    <div class="mm-date-wrap mm-date-checkout">
+                      <svg class="mm-cal" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <path d="M16 2v4M8 2v4M3 10h18" />
+                      </svg>
+                      <input class="mm-input" type="date" id="mm-checkout" name="checkout" readonly
+                        placeholder="auto-calculated">
+                    </div>
+                  </div>
+
+                  <div class="mm-field mm-field--full">
                     <label class="mm-label" for="mm-nights">Number Of Nights<span class="req">*</span></label>
                     <select class="mm-select" id="mm-nights" name="nights">
                       <option value="1">1</option>
