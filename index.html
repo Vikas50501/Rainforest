@@ -62,12 +62,8 @@
   </section>
 
   <!-- ============ CALL BAR + CARDS ============ -->
-  <section class="intro" id="cards">
-
-    <div class="wrap">
-
-
-      <div class="wrap">
+  <section class="home-intro" id="cards">
+    <div class="intro-panel">
         <div class="sec-head">
           <span class="small" style="color:var(--olive)">For Booking Call us @: +91 223 334 2234
           </span>
@@ -119,7 +115,7 @@
             <div class="actions"><a href="#">Book Now</a><a href="#">Enquire</a></div>
           </article>
         </div>
-      </div>
+    </div>
   </section>
 
   <!-- ============ VISIT OUR PROPERTIES ============ -->
@@ -659,13 +655,22 @@
     document.getElementById('navToggle').addEventListener('click', () => {
       document.getElementById('menu').classList.toggle('open');
     });
-    // range sliders
-    const guests = document.getElementById('guests'), gVal = document.getElementById('gVal');
-    const rooms = document.getElementById('rooms'), rVal = document.getElementById('rVal');
-    guests.addEventListener('input', () => gVal.textContent = guests.value);
-    rooms.addEventListener('input', () => rVal.textContent = rooms.value);
     // back to top
     totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* reveal the floating intro panel as it scrolls into view */
+    (function () {
+      const panel = document.querySelector('.intro-panel');
+      if (!panel) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) { panel.classList.add('is-visible'); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { panel.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      io.observe(panel);
+    })();
 
     /* =========================================================
        HERO SLIDESHOW
