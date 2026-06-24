@@ -183,7 +183,7 @@ a{text-decoration:none;color:inherit}
   padding:clamp(72px,9vw,120px) 24px;
   background:
     linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.52)),
-    url('images/banner images.png') center/cover no-repeat;
+    url('images/banner-mountain.png') center/cover no-repeat;
 }
 .heritage .wrap{max-width:820px;margin:0 auto;padding:0}
 .heritage .script{
