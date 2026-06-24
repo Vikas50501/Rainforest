@@ -118,6 +118,15 @@
     </div>
   </section>
 
+  <!-- ============ HERITAGE INTRO BANNER ============ -->
+  <section class="heritage">
+    <div class="wrap reveal-up">
+      <span class="script">Rich in heritage. Best in comfort</span>
+      <h2>With the everlasting beauty that stood for many years comes a fine resort to serve its name</h2>
+      <a class="heritage-link" href="contact.html">I want to plan my holiday here</a>
+    </div>
+  </section>
+
   <!-- ============ VISIT OUR PROPERTIES ============ -->
   <section class="props">
     <div class="wrap">
@@ -658,18 +667,21 @@
     // back to top
     totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    /* reveal the floating intro panel as it scrolls into view */
+    /* reveal elements (intro panel, heritage banner, …) as they scroll into view */
     (function () {
-      const panel = document.querySelector('.intro-panel');
-      if (!panel) return;
+      const targets = document.querySelectorAll('.intro-panel, .reveal-up');
+      if (!targets.length) return;
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || !('IntersectionObserver' in window)) { panel.classList.add('is-visible'); return; }
+      if (reduce || !('IntersectionObserver' in window)) {
+        targets.forEach((t) => t.classList.add('is-visible'));
+        return;
+      }
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) { panel.classList.add('is-visible'); io.unobserve(e.target); }
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
         });
       }, { threshold: 0.15 });
-      io.observe(panel);
+      targets.forEach((t) => io.observe(t));
     })();
 
     /* =========================================================
