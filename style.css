@@ -228,7 +228,7 @@ a{text-decoration:none;color:inherit}
    PRICING
    ========================================================= */
 .pricing{padding:90px 0}
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20}
 .plan{background:var(--sage-soft);text-align:center;transition:.3s}
 .plan .img{height:175px;background-size:cover;background-position:center}
 .plan .pbody{padding:34px 24px 0}
