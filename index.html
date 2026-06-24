@@ -360,7 +360,7 @@
                     </div>
                   </div>
 
-                  <div class="mm-field mm-field--full">
+                  <div class="mm-field">
                     <label class="mm-label" for="mm-nights">Number Of Nights<span class="req">*</span></label>
                     <select class="mm-select" id="mm-nights" name="nights">
                       <option value="1">1</option>
@@ -370,6 +370,18 @@
                       <option value="5">5</option>
                       <option value="6">6</option>
                     </select>
+                  </div>
+
+                  <div class="mm-field" data-required data-rule="room">
+                    <label class="mm-label" for="mm-room-type">Room Type<span class="req">*</span></label>
+                    <select class="mm-select" id="mm-room-type" name="roomType">
+                      <option value="" selected disabled>Select a room</option>
+                      <option value="Classic">Classic</option>
+                      <option value="Modern">Modern</option>
+                      <option value="Retro">Retro</option>
+                      <option value="Honeymoon Wooden Cottage">Honeymoon Wooden Cottage</option>
+                    </select>
+                    <span class="mm-err">* Please select a room type</span>
                   </div>
 
                   <div class="mm-field">

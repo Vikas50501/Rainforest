@@ -110,6 +110,7 @@
       checkin:  form.checkin.value,
       checkout: form.checkout.value,
       nights:   form.nights.value,
+      roomType: form.roomType.value,
       guests:  form.guests.value,
       rooms:   form.rooms.value,
       name:    form.name.value.trim(),
