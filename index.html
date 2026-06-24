@@ -648,6 +648,10 @@
   <button class="totop" id="totop" aria-label="Back to top">&#8593;</button>
 
   <script>
+    // always start at the top on (re)load — don't restore previous scroll
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+
     // sticky header
     const header = document.getElementById('header');
     const totop = document.getElementById('totop');
