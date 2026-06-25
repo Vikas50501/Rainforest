@@ -129,55 +129,176 @@
   </div>
 </section>
 
-<!-- ============ BOOKING FORM + DEALS ============ -->
-<section class="book-deals" id="book">
-  <div class="book">
-    <div class="banner"><span class="script">Serenity &amp; brittle nature</span></div>
-    <div class="form-area">
-      <h2>Book Now</h2>
-      <div class="form-box">
-        <div class="field">
-          <label>Check in <b>*</b></label>
-          <input type="date" value="2026-06-20">
+<!-- ============ BOOK NOW + DEALS ============ -->
+  <section class="bd" id="book">
+    <div class="bd-banner">
+      <span class="script">Serenity &amp; brittle nature</span>
+    </div>
+
+    <div class="bd-body">
+      <div class="bd-book">
+      <div class="mm-book">
+        <h2 class="mm-heading">BOOK NOW</h2>
+        <span class="mm-heading-bar"></span>
+
+        <div class="mm-steps" id="mmSteps">
+          <div class="mm-step is-active">
+            <div class="mm-step-dot">1</div>
+            <span class="mm-step-label">Stay</span>
+          </div>
+          <div class="mm-step-line"></div>
+          <div class="mm-step">
+            <div class="mm-step-dot">2</div>
+            <span class="mm-step-label">Contact</span>
+          </div>
         </div>
-        <div class="field">
-          <label>Number Of Nights <b>*</b></label>
-          <select><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select>
-        </div>
-        <div class="field">
-          <label>Room Type <b>*</b></label>
-          <select><option>Classic</option><option>Modern</option><option>Retro Suite</option></select>
-        </div>
-        <div class="field">
-          <label>Number of Rooms <b>*</b></label>
-          <div class="range-row"><span class="val" id="rVal">1</span><input type="range" min="1" max="6" value="1" id="rooms"></div>
-        </div>
-        <div class="field">
-          <label>Number of Guests <b>*</b></label>
-          <div class="range-row"><span class="val" id="gVal">1</span><input type="range" min="1" max="8" value="1" id="guests"></div>
-        </div>
-        <div class="field">
-          <label>Children</label>
-          <div class="range-row"><span class="val" id="cVal">0</span><input type="range" min="0" max="6" value="0" id="children"></div>
-        </div>
-        <div class="form-actions">
-          <a href="#">Prev</a>
-          <button class="btn" type="button">Submit</button>
-          <a href="#">Next</a>
+
+        <div class="mm-card">
+          <div class="mm-body">
+            <form id="mmForm" novalidate>
+
+              <!-- ===== STEP 1: STAY ===== -->
+              <div class="mm-panel is-active" data-panel="0">
+                <div class="mm-grid">
+
+                  <div class="mm-field" data-required data-rule="date">
+                    <label class="mm-label" for="mm-checkin">Check in<span class="req">*</span></label>
+                    <div class="mm-date-wrap" id="mm-date-wrap">
+                      <svg class="mm-cal" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <path d="M16 2v4M8 2v4M3 10h18" />
+                      </svg>
+                      <input class="mm-input" type="date" id="mm-checkin" name="checkin">
+                      <button type="button" class="mm-date-clear" id="mm-date-clear"
+                        aria-label="Clear date">&times;</button>
+                    </div>
+                    <span class="mm-err">* This field is required</span>
+                  </div>
+
+                  <div class="mm-field">
+                    <label class="mm-label" for="mm-checkout">Check out</label>
+                    <div class="mm-date-wrap mm-date-checkout">
+                      <svg class="mm-cal" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <path d="M16 2v4M8 2v4M3 10h18" />
+                      </svg>
+                      <input class="mm-input" type="date" id="mm-checkout" name="checkout" readonly
+                        placeholder="auto-calculated">
+                    </div>
+                  </div>
+
+                  <div class="mm-field">
+                    <label class="mm-label" for="mm-nights">Number Of Nights<span class="req">*</span></label>
+                    <select class="mm-select" id="mm-nights" name="nights">
+                      <option value="1">1</option>
+                      <option value="2" selected>2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
+                  </div>
+
+                  <div class="mm-field" data-required data-rule="room">
+                    <label class="mm-label" for="mm-room-type">Room Type<span class="req">*</span></label>
+                    <select class="mm-select" id="mm-room-type" name="roomType">
+                      <option value="" selected disabled>Select a room</option>
+                      <option value="Classic">Classic</option>
+                      <option value="Modern">Modern</option>
+                      <option value="Retro">Retro</option>
+                      <option value="Honeymoon Wooden Cottage">Honeymoon Wooden Cottage</option>
+                    </select>
+                    <span class="mm-err">* Please select a room type</span>
+                  </div>
+
+                  <div class="mm-field">
+                    <label class="mm-label" for="mm-guests">Number of Guests<span class="req">*</span></label>
+                    <div class="mm-slider-row">
+                      <div class="mm-slider-box" id="mm-guests-val">2</div>
+                      <input class="mm-range" type="range" id="mm-guests" name="guests" min="1" max="20" step="1"
+                        value="2">
+                    </div>
+                  </div>
+
+                  <div class="mm-field">
+                    <label class="mm-label" for="mm-rooms">Number of Rooms<span class="req">*</span></label>
+                    <div class="mm-slider-row">
+                      <div class="mm-slider-box" id="mm-rooms-val">1</div>
+                      <input class="mm-range" type="range" id="mm-rooms" name="rooms" min="1" max="10" step="1"
+                        value="1">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- ===== STEP 2: DETAILS ===== -->
+              <div class="mm-panel" data-panel="1">
+
+                <div class="mm-field mm-field--full" data-required data-rule="name">
+                  <label class="mm-label" for="mm-name">Name<span class="req">*</span></label>
+                  <input class="mm-input" type="text" id="mm-name" name="name" placeholder="Name" autocomplete="name">
+                  <span class="mm-err">* This field is required; Valid name only, no special characters except dots and
+                    single quote for salutation</span>
+                </div>
+
+                <div class="mm-field mm-field--full" data-required data-rule="email">
+                  <label class="mm-label" for="mm-email">Email Address<span class="req">*</span></label>
+                  <input class="mm-input" type="email" id="mm-email" name="email" placeholder="Email Address"
+                    autocomplete="email">
+                  <span class="mm-err">* This field is required; * Invalid email address</span>
+                </div>
+
+                <div class="mm-field mm-field--full" data-required data-rule="phone">
+                  <label class="mm-label" for="mm-phone">Phone<span class="req">*</span></label>
+                  <input class="mm-input" type="tel" id="mm-phone" name="phone" placeholder="Phone" autocomplete="tel">
+                  <span class="mm-err">* This field is required; * Invalid phone number</span>
+                </div>
+
+              </div>
+
+              <!-- ===== FOOTER ===== -->
+              <div class="mm-footer">
+                <button type="button" class="mm-btn" id="mmPrev">Prev</button>
+                <button type="submit" class="mm-btn is-cta" id="mmSubmit">Submit</button>
+                <button type="button" class="mm-btn is-cta" id="mmNext">Next</button>
+              </div>
+
+            </form>
+
+            <!-- ===== SUCCESS ===== -->
+            <div class="mm-success" id="mmSuccess">
+              <div class="mm-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
+              <h3>Request received</h3>
+              <p id="mmSuccessMsg">Thank you. We'll confirm your stay by email shortly.</p>
+            </div>
+
+          </div>
         </div>
       </div>
+      </div>
+
+      <aside class="bd-offer">
+        <img class="bd-offer-img" src="images/Accommodation-img%20(1).jpeg"
+          alt="Deluxe wood-finish room at Rainforest Munnar" loading="lazy">
+        <div class="bd-offer-deals">
+          <h2>Get the Best Deals</h2>
+          <p>Get irresistible offers from Misty Mount Resorts. We have special packages for winter and
+            also an off season package. Reserve now to avail the early bird offers!</p>
+          <span class="bd-div"></span>
+          <p>This experience will be worth in your lifetime.</p>
+          <span class="bd-div"></span>
+          <p>Get away from the hustle and bustle of the city &amp; venture into wilderness safely from
+            Misty Mount.</p>
+          <div class="bd-call"><span class="script">Have Questions? Call (457) 213-9438</span></div>
+        </div>
+      </aside>
     </div>
-  </div>
-  <div class="deals">
-    <h2>Get the Best Deals</h2>
-    <p>Get irresistible offers from Misty Mount Resorts. We have special packages for winter and also an off-season package. Reserve now to avail the early bird offers!</p>
-    <div class="div"></div>
-    <p>This experience will be worth it in your lifetime.</p>
-    <div class="div"></div>
-    <p>Get away from the hustle and bustle of the city &amp; venture into wilderness safely from Misty Mount.</p>
-    <div class="call"><span class="script">Have Questions? Call (457) 213-9438</span></div>
-  </div>
-</section>
+  </section>
 
 <!-- ============ WHAT'S INCLUDED ============ -->
 <section class="included">
@@ -304,15 +425,7 @@ document.getElementById('navToggle').addEventListener('click',()=>{
   document.getElementById('menu').classList.toggle('open');
 });
 totop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-// range sliders
-function bind(id,valId){
-  const el=document.getElementById(id),v=document.getElementById(valId);
-  if(el&&v) el.addEventListener('input',()=>v.textContent=el.value);
-}
-bind('guests','gVal');
-bind('rooms','rVal');
-bind('children','cVal');
 </script>
+<script src="form-booking-form.js"></script>
 </body>
 </html>
