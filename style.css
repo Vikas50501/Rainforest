@@ -367,7 +367,7 @@ a{text-decoration:none;color:inherit}
    ========================================================= */
 .gallery{background:var(--sage-soft);padding:0 0 70px}
 .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-#gallery .view-more{border:2px solid var(--olive)}
+#gallery .view-more{border:2px solid var(--olive);padding:12px 35px}
 .gal-grid .tall{min-height:380px;background-size:cover;background-position:center}
 .gal-grid .col{display:grid;grid-template-rows:1fr 1fr;gap:14px}
 .gal-grid .col span{background-size:cover;background-position:center;min-height:183px}
