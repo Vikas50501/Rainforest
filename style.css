@@ -308,7 +308,7 @@ a{text-decoration:none;color:inherit}
    PRICING
    ========================================================= */
 .pricing{padding:90px 0}
-#pricing{background:#f7f6f1}
+#pricing{background:#f7f6f1;padding:70px 0;margin:70px 0}
 .price-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
