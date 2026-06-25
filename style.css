@@ -2210,6 +2210,8 @@ a{text-decoration:none;color:inherit}
   margin: 0 auto;
   padding-bottom: 64px;
 }
+/* accommodation booking section: 24px side gutters (vertical spacing preserved) */
+#book.bd{padding-left:24px;padding-right:24px}
 
 /* ---- banner ---- */
 .bd-banner {
