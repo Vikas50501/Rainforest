@@ -1221,16 +1221,17 @@ a{text-decoration:none;color:inherit}
 /* =========================================================
    ROOM DETAIL ROWS  (alternating split)
    ========================================================= */
-.rooms{padding:30px 0 90px}
-.room-row{display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-bottom:60px}
+.rooms{padding:0}
+.room-row{display:grid;grid-template-columns:1fr 1fr;align-items:center;margin-bottom:0}
 .room-row:last-child{margin-bottom:0}
-.room-row .photo{position:relative;min-height:420px;background-size:cover;background-position:center}
+.room-row .photo{position:relative;min-height:540px;background-size:cover;background-position:center}
+.room-row .photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.5) 100%)}
 .room-row.alt{direction:rtl}
 .room-row.alt > *{direction:ltr}
-.room-row .text{padding:50px 60px}
-.room-row .tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);font-weight:600}
-.room-row h3{font-weight:300;font-size:clamp(24px,3vw,32px);color:#333;margin-top:8px}
-.room-row p{color:#6f6f6f;margin-top:16px;max-width:480px}
+.room-row .text{padding:90px 64px}
+.room-row .tag{display:block;font-family:'Great Vibes',cursive;font-size:30px;letter-spacing:0;text-transform:none;color:var(--olive);font-weight:400;line-height:1}
+.room-row h3{font-weight:300;font-size:clamp(26px,3.4vw,38px);letter-spacing:.02em;color:#333;margin-top:6px}
+.room-row p{color:#6f6f6f;margin-top:18px;max-width:460px}
 .room-feats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .room-feats span{background:var(--sage-soft);color:#566048;font-size:12px;letter-spacing:.04em;padding:7px 14px;border-radius:var(--radius)}
 .room-row .price{margin-top:22px;color:#555;font-size:15px}
@@ -1343,8 +1344,8 @@ a{text-decoration:none;color:inherit}
   .check-grid{grid-template-columns:repeat(2,1fr);gap:6px 30px}
   .foot-grid{grid-template-columns:repeat(2,1fr)}
   .room-row,.room-row.alt,.book-deals{grid-template-columns:1fr;direction:ltr}
-  .room-row .text{padding:40px 28px}
-  .room-row .photo{min-height:300px}
+  .room-row .text{padding:54px 28px}
+  .room-row .photo{min-height:360px}
   .book .form-area,.deals{padding:54px 28px}
   .page-banner{height:340px}
 }
