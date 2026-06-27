@@ -2192,12 +2192,12 @@ a{text-decoration:none;color:inherit}
     .mm-panel.is-active, .mm-success.is-active { animation: none; }
   }
   .amenities{
-    max-width: 1280px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
   .book-deals{
-    max-width: 1280px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
