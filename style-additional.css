@@ -16,13 +16,12 @@
 /* ---- Sightseeing places by direction ---- */
 .dir-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:26px; margin-top:46px;
 }
 .dir-card{
   background:#fff;
   border:1px solid var(--line,#ece9e0);
-  border-radius:14px;
   padding:30px 28px;
   transition:transform .25s, box-shadow .25s;
 }
@@ -154,13 +153,12 @@
 /* ---- Sightseeing places by direction ---- */
 .dir-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:26px; margin-top:46px;
 }
 .dir-card{
   background:#fff;
   border:1px solid var(--line,#ece9e0);
-  border-radius:14px;
   padding:30px 28px;
   transition:transform .25s, box-shadow .25s;
 }
@@ -334,3 +332,6 @@
     font-size:40px;
     cursor:pointer;
 }
+
+/* sightseeing direction cards: single column on small screens */
+@media(max-width:600px){ .dir-grid{ grid-template-columns:1fr; } }
