@@ -25,7 +25,7 @@
   padding:30px 28px;
   transition:transform .25s, box-shadow .25s;
 }
-.dir-card:hover{ transform:translateY(-6px); box-shadow:0 18px 38px rgba(0,0,0,.09); }
+.dir-card:hover{ transform:translateY(-6px);}
 .dir-card .tag{
   display:inline-block; font-size:.72rem; letter-spacing:.12em;
   text-transform:uppercase; color:var(--olive); font-weight:600; margin-bottom:6px;
@@ -162,7 +162,7 @@
   padding:30px 28px;
   transition:transform .25s, box-shadow .25s;
 }
-.dir-card:hover{ transform:translateY(-6px); box-shadow:0 18px 38px rgba(0,0,0,.09); }
+.dir-card:hover{ transform:translateY(-6px); }
 .dir-card .tag{
   display:inline-block; font-size:.72rem; letter-spacing:.12em;
   text-transform:uppercase; color:var(--olive); font-weight:600; margin-bottom:6px;
