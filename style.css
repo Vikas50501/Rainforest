@@ -73,7 +73,7 @@ a{text-decoration:none;color:inherit}
 .menu a{
   font-size:14px;font-weight:500;color:#3a3a3a;padding:6px 0;position:relative;transition:.2s;
 }
-.header:not(.scrolled) .menu a{color:#fff}
+.header:not(.scrolled) .menu a{color:#000}
 .menu a:hover,.menu a.active{color:var(--olive)}
 .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--olive);transition:.25s}
 .menu a:hover::after,.menu a.active::after{width:100%}
@@ -85,7 +85,7 @@ a{text-decoration:none;color:inherit}
 .hero{
   position:relative;
   width:100%;
-  height:110vh;
+  height:105vh;
   overflow:hidden;
   isolation:isolate;
 }
@@ -289,20 +289,49 @@ a{text-decoration:none;color:inherit}
    ========================================================= */
 .amenities{display:grid;grid-template-columns:1fr 1fr;align-items:center}
 .amenities .text{padding:90px 64px}
-.amenities h2{font-weight:300;font-size:clamp(26px,3.4vw,38px);letter-spacing:.02em;color:#333}
+.amenities .text .small{font-family:'Great Vibes',cursive;font-size:30px;color:var(--olive);line-height:1;display:block}
+.amenities h2{font-weight:300;font-size:clamp(26px,3.4vw,38px);letter-spacing:.02em;color:#333;margin-top:6px}
 .amenities .text p{color:#6f6f6f;margin-top:18px;max-width:440px}
-.amenities .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;max-width:440px}
-.amenities .thumbs span{aspect-ratio:1;background-size:cover;background-position:center}
-.amenities .photo{
-  position:relative;min-height:560px;background-size:cover;background-position:center;
+
+/* prev / next controls */
+.am-nav{display:flex;gap:10px;margin:26px 0 18px}
+.am-arrow{
+  width:42px;height:42px;border:1px solid var(--line,#e6e6e3);background:#fff;color:var(--olive);
+  font-size:22px;line-height:1;cursor:pointer;border-radius:var(--radius);
+  display:grid;place-items:center;transition:background .2s,color .2s,border-color .2s;
 }
+.am-arrow:hover{background:var(--olive);color:#fff;border-color:var(--olive)}
+
+/* thumbnail rail: horizontal scroll + snap */
+.amenities .thumbs{
+  display:flex;gap:10px;max-width:440px;overflow-x:auto;padding-bottom:6px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;
+}
+.am-thumb{
+  flex:0 0 86px;height:78px;padding:0;border:2px solid transparent;border-radius:var(--radius);
+  background-size:cover;background-position:center;cursor:pointer;scroll-snap-align:start;opacity:.65;
+  transition:transform .25s ease,opacity .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.am-thumb:hover{transform:scale(1.05);opacity:1}
+.am-thumb.is-active{opacity:1;border-color:var(--olive);box-shadow:0 8px 20px rgba(134,154,82,.35)}
+
+/* featured image (fade + zoom transition) */
+.amenities .photo{position:relative;min-height:560px;overflow:hidden;background:#e9eadf}
 .amenities .photo::before{
-  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%);
 }
-.amenities .photo::after{
-  content:"Fully Furnished Rooms";position:absolute;left:42px;bottom:36px;z-index:2;
+.am-featured{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  transition:opacity .45s ease,transform .6s ease;
+}
+.am-featured.is-changing{opacity:0;transform:scale(1.05)}
+.am-caption{
+  position:absolute;left:42px;bottom:36px;z-index:2;
   color:#fff;font-size:26px;font-weight:500;text-shadow:0 2px 12px rgba(0,0,0,.5);
+  transition:opacity .35s ease;
 }
+.am-caption.is-changing{opacity:0}
 
 /* =========================================================
    PRICING
@@ -545,7 +574,7 @@ a{text-decoration:none;color:inherit}
 .brand .name{font-weight:700;font-size:22px;letter-spacing:.04em;color:#2c2c2c}
 .menu{display:flex;gap:34px;list-style:none;flex-wrap:wrap;justify-content:center}
 .menu a{font-size:14px;font-weight:500;color:#3a3a3a;padding:6px 0;position:relative;transition:.2s}
-.header:not(.scrolled) .menu a{color:#fff}
+.header:not(.scrolled) .menu a{color:#000}
 .menu a:hover,.menu a.active{color:var(--olive)}
 .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--olive);transition:.25s}
 .menu a:hover::after,.menu a.active::after{width:100%}
@@ -755,7 +784,7 @@ a{text-decoration:none;color:inherit}
 .brand .name{font-weight:700;font-size:22px;letter-spacing:.04em;color:#2c2c2c}
 .menu{display:flex;gap:34px;list-style:none;flex-wrap:wrap;justify-content:center}
 .menu a{font-size:14px;font-weight:500;color:#3a3a3a;padding:6px 0;position:relative;transition:.2s}
-.header:not(.scrolled) .menu a{color:#fff}
+.header:not(.scrolled) .menu a{color:#000}
 .menu a:hover,.menu a.active{color:var(--olive)}
 .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--olive);transition:.25s}
 .menu a:hover::after,.menu a.active::after{width:100%}
@@ -964,7 +993,7 @@ a{text-decoration:none;color:inherit}
 .brand .name{font-weight:700;font-size:22px;letter-spacing:.04em;color:#2c2c2c}
 .menu{display:flex;gap:34px;list-style:none;flex-wrap:wrap;justify-content:center}
 .menu a{font-size:14px;font-weight:500;color:#3a3a3a;padding:6px 0;position:relative;transition:.2s}
-.header:not(.scrolled) .menu a{color:#fff}
+.header:not(.scrolled) .menu a{color:#000}
 .menu a:hover,.menu a.active{color:var(--olive)}
 .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--olive);transition:.25s}
 .menu a:hover::after,.menu a.active::after{width:100%}
@@ -1174,7 +1203,7 @@ a{text-decoration:none;color:inherit}
 .brand .name{font-weight:700;font-size:22px;letter-spacing:.04em;color:#2c2c2c}
 .menu{display:flex;gap:34px;list-style:none;flex-wrap:wrap;justify-content:center}
 .menu a{font-size:14px;font-weight:500;color:#3a3a3a;padding:6px 0;position:relative;transition:.2s}
-.header:not(.scrolled) .menu a{color:#fff}
+.header:not(.scrolled) .menu a{color:#000}
 .menu a:hover,.menu a.active{color:var(--olive)}
 .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--olive);transition:.25s}
 .menu a:hover::after,.menu a.active::after{width:100%}
@@ -1431,7 +1460,7 @@ a{text-decoration:none;color:inherit}
   font-size:14px;font-weight:500;color:#3a3a3a;padding:6px 0;position:relative;transition:.2s;
 }
 /* page-banner pages keep dark text since the banner has its own overlay below the fixed header */
-.header:not(.scrolled) .menu a{color:#fff}
+.header:not(.scrolled) .menu a{color:#000}
 .menu a:hover,.menu a.active{color:var(--olive)}
 .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--olive);transition:.25s}
 .menu a:hover::after,.menu a.active::after{width:100%}
@@ -1670,7 +1699,7 @@ a{text-decoration:none;color:inherit}
 .brand .name{font-weight:700;font-size:22px;letter-spacing:.04em;color:#2c2c2c}
 .menu{display:flex;gap:34px;list-style:none;flex-wrap:wrap;justify-content:center}
 .menu a{font-size:14px;font-weight:500;color:#3a3a3a;padding:6px 0;position:relative;transition:.2s}
-.header:not(.scrolled) .menu a{color:#fff}
+.header:not(.scrolled) .menu a{color:#000}
 .menu a:hover,.menu a.active{color:var(--olive)}
 .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--olive);transition:.25s}
 .menu a:hover::after,.menu a.active::after{width:100%}

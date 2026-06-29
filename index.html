@@ -42,12 +42,8 @@
     <div class="hero-slides" id="heroSlides">
       <div class="hero-slide active" style="background-image:url('images/01.png')"></div>
       <div class="hero-slide" style="background-image:url('images/02.png')"></div>
-      <div class="hero-slide" style="background-image:url('images/03.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/04.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/05.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/06.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/07.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/10.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/03.png')"></div>
+      <div class="hero-slide" style="background-image:url('images/04.png')"></div>
     </div>
 
     <button class="hero-arrow left" id="heroPrev" aria-label="Previous">&#10094;</button>
@@ -229,20 +225,44 @@
   </section>
 
   <!-- ============ AMENITIES ============ -->
-  <section class="amenities">
+  <section class="amenities" id="amenities">
     <div class="text">
-      <h2>Amenities of Misty Mount</h2>
-      <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet
-        nibh amet. This experience will be worth in your lifetime.</p>
-      <div class="eyebrow-line"></div>
-      <div class="thumbs">
-        <span style="background-image:url('images/gallery-img (1).jpeg')"></span>
-        <span style="background-image:url('images/gallery-img (2).jpeg')"></span>
-        <span style="background-image:url('images/gallery-img (3).jpeg')"></span>
-        <span style="background-image:url('images/gallery-img (9).jpeg')"></span>
+      <span class="small">Comfort in every corner</span>
+      <h2>Amenities of Rainforest Munnar</h2>
+      <p>From fully furnished wooden rooms to misty valley views, every corner of the resort is designed
+        to make your stay effortless, warm and unforgettable.</p>
+
+      <div class="am-nav">
+        <button class="am-arrow" id="amPrev" type="button" aria-label="Previous amenity">&#8249;</button>
+        <button class="am-arrow" id="amNext" type="button" aria-label="Next amenity">&#8250;</button>
+      </div>
+
+      <div class="thumbs" id="amThumbs">
+        <button class="am-thumb is-active" type="button" data-img="images/Accommodation-img (1).jpeg"
+          data-caption="Fully Furnished Rooms" style="background-image:url('images/Accommodation-img (1).jpeg')"
+          aria-label="Fully Furnished Rooms"></button>
+        <button class="am-thumb" type="button" data-img="images/gallery-img (7).jpeg"
+          data-caption="Wooden Cottages" style="background-image:url('images/gallery-img (7).jpeg')"
+          aria-label="Wooden Cottages"></button>
+        <button class="am-thumb" type="button" data-img="images/Accommodation-img (5).jpeg"
+          data-caption="Cosy Interiors" style="background-image:url('images/Accommodation-img (5).jpeg')"
+          aria-label="Cosy Interiors"></button>
+        <button class="am-thumb" type="button" data-img="images/fogg-nature-img.jpeg"
+          data-caption="Misty Surroundings" style="background-image:url('images/fogg-nature-img.jpeg')"
+          aria-label="Misty Surroundings"></button>
+        <button class="am-thumb" type="button" data-img="images/gallery-img (5).jpeg"
+          data-caption="Lush Gardens" style="background-image:url('images/gallery-img (5).jpeg')"
+          aria-label="Lush Gardens"></button>
+        <button class="am-thumb" type="button" data-img="images/gallery-img (2).jpeg"
+          data-caption="Valley Views" style="background-image:url('images/gallery-img (2).jpeg')"
+          aria-label="Valley Views"></button>
       </div>
     </div>
-    <div class="photo" style="background-image:url('images/gallery-img (1).jpeg')"></div>
+
+    <div class="photo" id="amPhoto">
+      <img class="am-featured" id="amFeatured" src="images/Accommodation-img (1).jpeg" alt="Fully Furnished Rooms">
+      <span class="am-caption" id="amCaption">Fully Furnished Rooms</span>
+    </div>
   </section>
 
   <!-- ============ PRICING ============ -->
@@ -772,6 +792,54 @@
       document.getElementById('mapPopup').style.display = 'none';
     }
   </script>
+
+  <!-- Amenities gallery slider -->
+  <script>
+    (function () {
+      var section = document.querySelector('.amenities');
+      if (!section) return;
+      var thumbs = Array.prototype.slice.call(section.querySelectorAll('.am-thumb'));
+      var featured = section.querySelector('#amFeatured');
+      var caption = section.querySelector('#amCaption');
+      var prevBtn = section.querySelector('#amPrev');
+      var nextBtn = section.querySelector('#amNext');
+      if (!thumbs.length || !featured) return;
+
+      var current = 0, timer = null, INTERVAL = 5000;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function show(i) {
+        i = (i + thumbs.length) % thumbs.length;
+        current = i;
+        thumbs.forEach(function (t, idx) { t.classList.toggle('is-active', idx === i); });
+        var img = thumbs[i].getAttribute('data-img');
+        var cap = thumbs[i].getAttribute('data-caption');
+        featured.classList.add('is-changing');
+        caption.classList.add('is-changing');
+        window.setTimeout(function () {
+          featured.src = img; featured.alt = cap;
+          caption.textContent = cap;
+          featured.classList.remove('is-changing');
+          caption.classList.remove('is-changing');
+        }, 220);
+        thumbs[i].scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+      }
+      function next() { show(current + 1); }
+      function prev() { show(current - 1); }
+      function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+      function start() { if (reduce) return; stop(); timer = window.setInterval(next, INTERVAL); }
+
+      thumbs.forEach(function (t, i) { t.addEventListener('click', function () { show(i); start(); }); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { next(); start(); });
+      if (prevBtn) prevBtn.addEventListener('click', function () { prev(); start(); });
+      section.addEventListener('mouseenter', stop);
+      section.addEventListener('mouseleave', start);
+
+      show(0);
+      start();
+    })();
+  </script>
+
   <script src="form-booking-form.js"></script>
 </body>
 
