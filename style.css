@@ -1268,6 +1268,180 @@ a{text-decoration:none;color:inherit}
 .room-row .btn{margin-top:24px}
 
 /* =========================================================
+   ROOM INTRO CARDS  (accommodation overview — no pricing)
+   ========================================================= */
+.room-intro{padding:90px 0}
+.room-intro-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:50px}
+.ric{background:#fff;overflow:hidden;transition:.3s;border:1px solid var(--line)}
+.ric:hover{box-shadow:0 16px 46px rgba(0,0,0,.1);transform:translateY(-4px)}
+.ric .ric-img{height:260px;background-size:cover;background-position:center;overflow:hidden;transition:.4s}
+.ric:hover .ric-img{transform:scale(1.04)}
+.ric .ric-body{padding:32px 28px 36px}
+.ric .tag{display:block;font-family:'Great Vibes',cursive;font-size:26px;color:var(--olive);line-height:1;margin-bottom:6px}
+.ric h3{font-weight:300;font-size:clamp(20px,2.2vw,26px);letter-spacing:.02em;color:#333;margin-bottom:14px}
+.ric .ric-desc{font-size:14px;color:#7a7a7a;line-height:1.7;margin-bottom:18px}
+.ric .room-feats{margin-bottom:24px}
+.ric .btn{font-size:11px;letter-spacing:.14em;padding:12px 28px}
+
+/* =========================================================
+   IMMERSIVE OPEN  (wooden-cottage hero)
+   ========================================================= */
+.wc-open{
+  position:relative;min-height:75vh;
+  background-size:cover;background-position:center;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+}
+.wc-open::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.58) 100%);
+}
+.wc-open-inner{position:relative;z-index:2;max-width:800px;padding:80px 24px}
+.wc-open-inner .eyebrow{
+  font-family:'Great Vibes',cursive;font-size:52px;color:rgba(255,255,255,.88);
+  line-height:1;margin-bottom:18px;display:block;
+}
+.wc-open-inner h2{
+  font-weight:300;font-size:clamp(26px,4vw,50px);letter-spacing:.04em;
+  line-height:1.2;color:#fff;margin-bottom:24px;
+}
+.wc-open-inner p{
+  font-size:16px;color:rgba(255,255,255,.78);max-width:580px;
+  margin:0 auto 36px;line-height:1.8;
+}
+
+/* =========================================================
+   SPEC STRIP  (horizontal fact bar — wooden-cottage)
+   ========================================================= */
+.spec-strip{display:flex;flex-wrap:wrap;background:var(--charcoal)}
+.spec-item{
+  flex:1;min-width:220px;text-align:center;
+  padding:52px 24px;border-right:1px solid rgba(255,255,255,.1);
+}
+.spec-item:last-child{border-right:none}
+.spec-item .spec-num{
+  font-family:'Great Vibes',cursive;font-size:54px;color:var(--sage);
+  line-height:1;display:block;margin-bottom:8px;
+}
+.spec-item .spec-label{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+}
+
+/* =========================================================
+   ROMANTIC EXPERIENCES  (wooden-cottage — dark card grid)
+   ========================================================= */
+.exp-section{background:var(--charcoal);padding:90px 0 100px}
+.exp-section .sec-head h2{color:#fff}
+.exp-section .sec-head p{color:#aeb3bd}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:50px}
+.exp-card{
+  padding:42px 32px;border:1px solid rgba(255,255,255,.09);
+  transition:.3s;
+}
+.exp-card:hover{background:rgba(255,255,255,.05)}
+.exp-card .exp-icon{
+  width:56px;height:56px;border-radius:50%;background:rgba(148,165,133,.15);
+  display:grid;place-items:center;margin-bottom:22px;transition:.3s;
+}
+.exp-card:hover .exp-icon{background:rgba(148,165,133,.3)}
+.exp-card .exp-icon svg{width:26px;height:26px;fill:var(--sage)}
+.exp-card h4{
+  font-weight:500;font-size:14px;letter-spacing:.06em;
+  color:#dfe2e7;text-transform:uppercase;margin-bottom:10px;
+}
+.exp-card p{font-size:13px;color:#8e97a5;line-height:1.7}
+
+/* =========================================================
+   STAT BAR  (kanthalloor — olive numbered overview)
+   ========================================================= */
+.stat-bar{background:var(--olive);display:flex;flex-wrap:wrap;align-items:stretch}
+.stat-item{
+  flex:1;min-width:200px;text-align:center;
+  padding:54px 24px;border-right:1px solid rgba(255,255,255,.22);
+}
+.stat-item:last-child{border-right:none}
+.stat-item .stat-num{
+  font-size:clamp(38px,5vw,60px);font-weight:700;
+  color:#fff;line-height:1;display:block;margin-bottom:8px;
+}
+.stat-item .stat-lbl{
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.82);
+}
+.stat-item .stat-sub{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px}
+
+/* =========================================================
+   ORCHARD SHOWCASE  (kanthalloor produce)
+   ========================================================= */
+.orchard-showcase{padding:90px 0;background:var(--paper)}
+.orchard-cols{
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:50px;
+}
+.orchard-col h3{
+  font-weight:400;font-size:21px;letter-spacing:.06em;
+  color:var(--olive);text-transform:uppercase;
+  padding-bottom:16px;border-bottom:2px solid var(--sage-soft);margin-bottom:26px;
+}
+.orchard-tags{display:flex;flex-wrap:wrap;gap:10px}
+.orchard-tags span{
+  background:#fff;border:1px solid #d6dace;color:#566048;
+  font-size:13px;letter-spacing:.04em;padding:8px 16px;
+  border-radius:var(--radius);transition:.2s;
+}
+.orchard-tags span:hover{background:var(--sage-soft);border-color:var(--sage)}
+
+/* =========================================================
+   CAMPFIRE STRIP  (kanthalloor evenings)
+   ========================================================= */
+.campfire-strip{
+  position:relative;min-height:62vh;
+  background-size:cover;background-position:center;
+  display:flex;align-items:center;
+}
+.campfire-strip::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.35) 60%,rgba(0,0,0,.1) 100%);
+}
+.campfire-inner{
+  position:relative;z-index:2;
+  max-width:560px;padding:80px 24px 80px 10%;color:#fff;
+}
+.campfire-inner .eyebrow{
+  font-family:'Great Vibes',cursive;font-size:44px;color:var(--sage);
+  line-height:1;margin-bottom:16px;display:block;
+}
+.campfire-inner h2{
+  font-weight:300;font-size:clamp(26px,3.5vw,44px);letter-spacing:.02em;
+  color:#fff;margin-bottom:22px;
+}
+.campfire-inner p{
+  color:rgba(255,255,255,.78);font-size:15px;line-height:1.8;margin-bottom:14px;
+}
+.campfire-inner .btn{margin-top:10px}
+
+/* =========================================================
+   DISTANCES TABLE  (kanthalloor getting here)
+   ========================================================= */
+.dist-section{background:var(--paper);padding:90px 0}
+.dist-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:0;margin-top:40px;border:1px solid var(--line);
+}
+.dist-row{
+  display:flex;align-items:center;gap:18px;
+  padding:20px 26px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+}
+.dist-row:nth-child(even){border-right:none}
+.dist-row:nth-last-child(-n+2){border-bottom:none}
+.dist-row .dist-icon{
+  width:40px;height:40px;background:var(--sage-soft);
+  border-radius:50%;display:grid;place-items:center;flex-shrink:0;
+}
+.dist-row .dist-icon svg{width:18px;height:18px;fill:var(--olive)}
+.dist-row .dist-place{font-weight:500;color:#333;font-size:15px;display:block}
+.dist-row .dist-km{font-size:13px;color:#7a7a7a;margin-top:2px;display:block}
+
+/* =========================================================
    BOOKING FORM  (reused from homepage book-deals)
    ========================================================= */
 .book-deals{display:grid;grid-template-columns:1fr 1fr}
@@ -1377,6 +1551,15 @@ a{text-decoration:none;color:inherit}
   .room-row .photo{min-height:360px}
   .book .form-area,.deals{padding:54px 28px}
   .page-banner{height:340px}
+  .room-intro-grid{grid-template-columns:1fr}
+  .exp-grid{grid-template-columns:1fr 1fr}
+  .orchard-cols{grid-template-columns:1fr;gap:40px}
+  .dist-grid{grid-template-columns:1fr}
+  .dist-row{border-right:none}
+  .dist-row:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+  .dist-row:last-child{border-bottom:none}
+  .campfire-inner{padding:60px 24px}
+  .wc-open{min-height:60vh}
 }
 @media(max-width:640px){
   .menu{gap:18px}
@@ -1387,6 +1570,13 @@ a{text-decoration:none;color:inherit}
   .menu{max-height:0;overflow:hidden;transition:.3s;width:100%}
   .menu.open{max-height:600px}
   .page-banner{height:300px}
+  .exp-grid{grid-template-columns:1fr}
+  .spec-strip{flex-direction:column}
+  .spec-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:36px 24px}
+  .spec-item:last-child{border-bottom:none}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding:38px 24px}
+  .stat-item:last-child{border-bottom:none}
+  .wc-open{min-height:55vh}
 }
 
 /* =========================================================
