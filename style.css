@@ -2253,9 +2253,9 @@ a{text-decoration:none;color:inherit}
   justify-content: flex-start;
   overflow: hidden;
 }
-/* accommodation banner: full-bleed, edge-to-edge of viewport */
-body { overflow-x: hidden; }
-#book .bd-banner {
+/* banner: full-bleed, edge-to-edge of viewport (home + accommodation) */
+html, body { overflow-x: hidden; }
+.bd-banner {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 }
@@ -2356,7 +2356,7 @@ body { overflow-x: hidden; }
   .bd-book { max-width: 56%; padding-top: 60px; }
   .bd-offer {
     position: absolute; z-index: 5;
-    top: clamp(-220px, -17vw, -150px);
+    bottom: 0; top: auto;          /* bottom aligns with the booking form */
     right: 0;
     width: clamp(360px, 32vw, 430px);
     margin: 0;
