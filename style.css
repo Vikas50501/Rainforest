@@ -1287,27 +1287,44 @@ a{text-decoration:none;color:inherit}
    IMMERSIVE OPEN  (wooden-cottage hero)
    ========================================================= */
 .wc-open{
-  position:relative;min-height:75vh;
+  position:relative;min-height:100vh;
   background-size:cover;background-position:center;
-  display:flex;align-items:center;justify-content:center;text-align:center;
+  display:flex;align-items:flex-end;justify-content:center;text-align:center;
 }
 .wc-open::before{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.58) 100%);
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.04) 0%,
+    rgba(0,0,0,.10) 40%,
+    rgba(0,0,0,.72) 80%,
+    rgba(0,0,0,.85) 100%
+  );
 }
-.wc-open-inner{position:relative;z-index:2;max-width:800px;padding:80px 24px}
+.wc-open-inner{position:relative;z-index:2;max-width:860px;padding:0 24px 100px}
 .wc-open-inner .eyebrow{
-  font-family:'Great Vibes',cursive;font-size:52px;color:rgba(255,255,255,.88);
-  line-height:1;margin-bottom:18px;display:block;
+  font-family:'Great Vibes',cursive;font-size:clamp(52px,7vw,80px);
+  color:rgba(255,255,255,.90);line-height:1;margin-bottom:0;display:block;
+}
+.wc-open-divider{
+  width:50px;height:1px;background:rgba(255,255,255,.45);
+  margin:20px auto 22px;display:block;
 }
 .wc-open-inner h2{
-  font-weight:300;font-size:clamp(26px,4vw,50px);letter-spacing:.04em;
-  line-height:1.2;color:#fff;margin-bottom:24px;
+  font-weight:200;font-size:clamp(34px,6.5vw,84px);letter-spacing:.06em;
+  line-height:1.08;color:#fff;margin-bottom:28px;
 }
 .wc-open-inner p{
-  font-size:16px;color:rgba(255,255,255,.78);max-width:580px;
-  margin:0 auto 36px;line-height:1.8;
+  font-size:16px;color:rgba(255,255,255,.72);max-width:560px;
+  margin:0 auto 40px;line-height:1.85;
 }
+.wc-open-inner .btn-outline{
+  display:inline-block;padding:16px 40px;
+  border:1px solid rgba(255,255,255,.7);color:#fff;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  background:transparent;transition:.3s;border-radius:var(--radius);cursor:pointer;
+}
+.wc-open-inner .btn-outline:hover{background:rgba(255,255,255,.15);border-color:#fff}
 
 /* =========================================================
    SPEC STRIP  (horizontal fact bar — wooden-cottage)
@@ -1319,8 +1336,8 @@ a{text-decoration:none;color:inherit}
 }
 .spec-item:last-child{border-right:none}
 .spec-item .spec-num{
-  font-family:'Great Vibes',cursive;font-size:54px;color:var(--sage);
-  line-height:1;display:block;margin-bottom:8px;
+  font-family:'Poppins',sans-serif;font-size:clamp(44px,6vw,68px);font-weight:800;
+  color:var(--sage);line-height:1;display:block;margin-bottom:8px;letter-spacing:-.02em;
 }
 .spec-item .spec-label{
   font-size:12px;letter-spacing:.14em;text-transform:uppercase;
@@ -1335,21 +1352,25 @@ a{text-decoration:none;color:inherit}
 .exp-section .sec-head p{color:#aeb3bd}
 .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:50px}
 .exp-card{
-  padding:42px 32px;border:1px solid rgba(255,255,255,.09);
-  transition:.3s;
+  padding:44px 36px 44px;
+  border-top:2px solid var(--sage);
+  border-left:1px solid rgba(255,255,255,.08);
+  border-right:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:.35s;
 }
-.exp-card:hover{background:rgba(255,255,255,.05)}
+.exp-card:hover{background:rgba(255,255,255,.04);border-top-color:#fff}
 .exp-card .exp-icon{
-  width:56px;height:56px;border-radius:50%;background:rgba(148,165,133,.15);
-  display:grid;place-items:center;margin-bottom:22px;transition:.3s;
+  width:auto;height:auto;background:transparent;
+  display:flex;align-items:center;margin-bottom:28px;
 }
-.exp-card:hover .exp-icon{background:rgba(148,165,133,.3)}
-.exp-card .exp-icon svg{width:26px;height:26px;fill:var(--sage)}
+.exp-card .exp-icon svg{width:42px;height:42px;fill:var(--sage);transition:.3s}
+.exp-card:hover .exp-icon svg{fill:#fff}
 .exp-card h4{
-  font-weight:500;font-size:14px;letter-spacing:.06em;
-  color:#dfe2e7;text-transform:uppercase;margin-bottom:10px;
+  font-weight:600;font-size:17px;letter-spacing:.01em;
+  color:#fff;text-transform:none;margin-bottom:12px;
 }
-.exp-card p{font-size:13px;color:#8e97a5;line-height:1.7}
+.exp-card p{font-size:14px;color:#8e97a5;line-height:1.75}
 
 /* =========================================================
    STAT BAR  (kanthalloor — olive numbered overview)
@@ -1361,8 +1382,8 @@ a{text-decoration:none;color:inherit}
 }
 .stat-item:last-child{border-right:none}
 .stat-item .stat-num{
-  font-size:clamp(38px,5vw,60px);font-weight:700;
-  color:#fff;line-height:1;display:block;margin-bottom:8px;
+  font-size:clamp(52px,7vw,80px);font-weight:800;
+  color:#fff;line-height:1;display:block;margin-bottom:8px;letter-spacing:-.02em;
 }
 .stat-item .stat-lbl{
   font-size:12px;letter-spacing:.12em;text-transform:uppercase;
@@ -1394,30 +1415,134 @@ a{text-decoration:none;color:inherit}
    CAMPFIRE STRIP  (kanthalloor evenings)
    ========================================================= */
 .campfire-strip{
-  position:relative;min-height:62vh;
+  position:relative;min-height:78vh;
   background-size:cover;background-position:center;
   display:flex;align-items:center;
 }
 .campfire-strip::before{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.35) 60%,rgba(0,0,0,.1) 100%);
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.86) 0%,
+    rgba(0,0,0,.6) 50%,
+    rgba(0,0,0,.15) 100%
+  );
 }
 .campfire-inner{
   position:relative;z-index:2;
-  max-width:560px;padding:80px 24px 80px 10%;color:#fff;
+  max-width:600px;padding:80px 24px 80px 10%;color:#fff;
 }
 .campfire-inner .eyebrow{
-  font-family:'Great Vibes',cursive;font-size:44px;color:var(--sage);
-  line-height:1;margin-bottom:16px;display:block;
+  font-family:'Great Vibes',cursive;font-size:52px;color:var(--sage);
+  line-height:1;margin-bottom:20px;display:block;
 }
 .campfire-inner h2{
-  font-weight:300;font-size:clamp(26px,3.5vw,44px);letter-spacing:.02em;
-  color:#fff;margin-bottom:22px;
+  font-weight:200;font-size:clamp(36px,5vw,64px);letter-spacing:.04em;
+  color:#fff;margin-bottom:26px;line-height:1.08;
 }
 .campfire-inner p{
-  color:rgba(255,255,255,.78);font-size:15px;line-height:1.8;margin-bottom:14px;
+  color:rgba(255,255,255,.78);font-size:15px;line-height:1.85;margin-bottom:14px;
 }
-.campfire-inner .btn{margin-top:10px}
+.campfire-inner .btn{margin-top:16px}
+
+/* =========================================================
+   WHY WOOD  (editorial numbered layout — wooden-cottage)
+   ========================================================= */
+.why-wood{padding:100px 0;background:#fafaf8}
+.why-wood .sec-head{margin-bottom:0}
+.why-wood-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;margin-top:60px;
+}
+.ww-item{
+  display:grid;grid-template-columns:64px 1fr;
+  gap:20px;align-items:start;
+  padding:44px 52px 44px 0;
+  border-bottom:1px solid var(--line);
+}
+.ww-item:nth-child(even){
+  padding-left:52px;padding-right:0;
+  border-left:1px solid var(--line);
+}
+.ww-item:nth-last-child(-n+2){border-bottom:none}
+.ww-num{
+  font-size:80px;font-weight:800;line-height:.85;
+  color:var(--olive);opacity:.13;
+  letter-spacing:-.04em;display:block;
+  margin-top:4px;
+}
+.ww-body h3{
+  font-weight:600;font-size:17px;color:#1e1e1e;
+  margin-bottom:10px;letter-spacing:.01em;
+}
+.ww-body p{font-size:14px;color:#6e6e6e;line-height:1.78}
+
+/* =========================================================
+   ACTIVITIES  (kanthalloor — large image-background cards)
+   ========================================================= */
+.act-section{padding:90px 0;background:var(--charcoal)}
+.act-section .sec-head h2{color:#fff}
+.act-section .sec-head p{color:#aeb3bd}
+.act-large-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:3px;margin-top:50px;
+}
+.act-card{
+  position:relative;min-height:400px;
+  background-size:cover;background-position:center;
+  overflow:hidden;
+}
+.act-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.88) 100%);
+  transition:.45s;
+}
+.act-card:hover::before{
+  background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.92) 100%);
+}
+.act-card-body{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:36px 30px;
+}
+.act-card-body .act-num{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--sage);font-weight:600;display:block;margin-bottom:10px;
+}
+.act-card-body h3{
+  font-weight:500;font-size:20px;color:#fff;
+  line-height:1.2;margin-bottom:0;
+}
+.act-card-body p{
+  font-size:13px;color:rgba(255,255,255,.72);line-height:1.65;
+  margin-top:12px;max-height:0;overflow:hidden;transition:.4s ease;
+}
+.act-card:hover .act-card-body p{max-height:120px}
+
+/* =========================================================
+   QUOTE STRIP  (wooden-cottage — cinematic quote band)
+   ========================================================= */
+.quote-strip{
+  position:relative;padding:130px 24px;text-align:center;
+  background-size:cover;background-position:center;
+  background-attachment:fixed;
+}
+.quote-strip::before{
+  content:"";position:absolute;inset:0;
+  background:rgba(0,0,0,.75);
+}
+.quote-strip-inner{position:relative;z-index:2;max-width:800px;margin:0 auto}
+.quote-strip-inner .qs-mark{
+  font-family:'Great Vibes',cursive;font-size:140px;
+  color:var(--sage);line-height:.55;display:block;margin-bottom:24px;opacity:.65;
+}
+.quote-strip-inner blockquote{
+  font-size:clamp(20px,2.8vw,34px);font-weight:200;
+  letter-spacing:.04em;color:#fff;line-height:1.55;margin:0;font-style:italic;
+}
+.quote-strip-inner cite{
+  display:block;margin-top:30px;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.5);font-style:normal;
+}
 
 /* =========================================================
    DISTANCES TABLE  (kanthalloor getting here)
@@ -2061,6 +2186,34 @@ a{text-decoration:none;color:inherit}
   .menu.open{max-height:600px}
   .page-banner{height:300px}
 }
+/* =========================================================
+   RESPONSIVE — wooden-cottage + kanthalloor new sections
+   ========================================================= */
+@media(max-width:980px){
+  .why-wood-grid{grid-template-columns:1fr}
+  .ww-item:nth-child(even){padding-left:0;border-left:none;border-bottom:1px solid var(--line)}
+  .ww-item:last-child{border-bottom:none}
+  .act-large-grid{grid-template-columns:repeat(2,1fr)}
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
+  .orchard-cols{grid-template-columns:1fr}
+  .quote-strip{background-attachment:scroll}
+  .campfire-inner{padding-left:28px}
+}
+@media(max-width:640px){
+  .spec-strip{flex-direction:column}
+  .spec-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .spec-item:last-child{border-bottom:none}
+  .act-large-grid{grid-template-columns:1fr}
+  .act-card{min-height:300px}
+  .exp-grid{grid-template-columns:1fr}
+  .why-wood-grid{grid-template-columns:1fr}
+  .ww-item{padding:32px 0}
+  .ww-item:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+  .ww-item:last-child{border-bottom:none}
+  .quote-strip{padding:80px 24px}
+  .quote-strip-inner .qs-mark{font-size:90px}
+}
+
 /* you tube embed responsive fix */
 .video-wrap{
     width: 60%;
